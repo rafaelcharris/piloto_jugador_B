@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Juego 2
+{% endblock %}
+
+{% block content %}
+<p>
+    A continuación, se le presentarán dos opciones y usted debe escoger la que prefiera
+</p>
+    {% formfield player.lotto %}
+    {% next_button %}
+{% endblock %}
