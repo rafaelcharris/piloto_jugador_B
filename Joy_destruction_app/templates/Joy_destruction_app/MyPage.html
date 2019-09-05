@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %} Juego {% endblock %}
+
+{% block content %}
+<p>
+    Usted tiene actualmente {{Constants.endowment}}
+</p>
+<p>
+    A continuación, usted tendrá la oportunidad de destruir la mitad del dinero del otro jugador.
+</p>
+<!--El código de abajo funciona porque en pages.py definí una clase "player" que tiene destroy y
+ esto lo definí en models.py. destroy es un bolean que se le pregunta al usuario-->
+    {% formfield player.destroy %}
+    {% next_button %}
+{% endblock %}

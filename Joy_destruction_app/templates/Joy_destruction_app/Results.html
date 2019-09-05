@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Resultados
+{% endblock %}
+
+{% block content %}
+
+{% formfield player.destroy %}
+
+{% if player.destroy == 1 %}
+    <p> Usted destruyó </p>
+{% endif %}
+{% if player.payoff < 8000 %}
+    <p>A usted le destruyeron la mitad de su dinero</p>
+{% endif %}
+<p>
+    Su pago total es {{player.payoff}}
+</p>
+    {% next_button %}
+{% endblock %}
+
+
