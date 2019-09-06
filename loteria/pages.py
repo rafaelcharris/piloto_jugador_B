@@ -15,7 +15,7 @@ class Results(Page):
         payoff = self.player.set_payoffs()
 
 class appropriation(Page):
-    form_model = ['appr']
+    form_fields = ['appr']
     form_model = 'player'
 
 page_sequence = [
