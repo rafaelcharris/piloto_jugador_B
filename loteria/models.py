@@ -47,3 +47,5 @@ class Player(BasePlayer):
                 self.payoff = Constants.endowment
         else:
             self.payoff = Constants.endowment - Constants.perdida_segura
+
+    appr = models.BooleanField(label = "¿desea tomar el 80% de las ganancias de otro jugador?")

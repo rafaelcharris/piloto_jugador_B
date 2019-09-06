@@ -14,7 +14,12 @@ class Results(Page):
     def vars_for_template(self):
         payoff = self.player.set_payoffs()
 
+class appropriation(Page):
+    form_model = ['appr']
+    form_model = 'player'
+
 page_sequence = [
     pregunta,
-    Results
+    Results,
+    appropriation
 ]
