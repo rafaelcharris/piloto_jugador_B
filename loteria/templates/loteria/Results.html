@@ -5,11 +5,11 @@
     Resultados
 {% endblock %}
 
-{% comment %}
+{% formfield player.lotto %}
+
 {% block content %}
         <p> Usted jugó la opción {{player.lotto}}</p>
-        <p> Su pago es {{player.payoff}}</p>
-{% endcomment %}
+        <p> Su pago es {{payoff}}</p>
     {% next_button %}
 {% endblock %}
 

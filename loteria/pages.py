@@ -3,16 +3,20 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 class pregunta(Page):
-    form_fields = 'player'
-    form_model = ['player']
+
+    form_fields = ['lotto']
+    form_model = 'player'
 
 class Results(Page):
 
-    def vars_for_template(self):
-        return(
+    form_fields = ['lotto']
+    form_model = 'player'
 
+    def vars_for_template(self):
+        payoff = self.player.set_payoffs()
+        return dict(
+            payoff = payoff
         )
-    pass
 
 page_sequence = [
     pregunta,
