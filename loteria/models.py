@@ -31,14 +31,18 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     lotto = models.StringField(widget=widgets.RadioSelectHorizontal,
-                               choices=[["A:", "perdida segura de 8000"], ["B:", "prob 20 de 0 y 80 de 9000"]]
+                               choices=[["A:", "perdida segura de 8000 pesos"], ["B:", "probabilidad de 20% de "
+                                                                                       "perder 0 y 80% de perder 9000"]]
                                )
-
+    #Función que define los pagos
     def set_payoffs(self):
         if self.lotto == "B:":
+            #esto le asigna a prob un número enter 0 y 1
             prob = rm.random()
+            #Si ese número es menor de 0.8 (la probabilidad es igual o menor que 80%) entonces reste 9000
             if prob <= 0.8:
                 self.payoff = Constants.endowment - Constants.perdida_80
+            #Si no, haga que no pierda nada.
             else:
                 self.payoff = Constants.endowment
         else:
