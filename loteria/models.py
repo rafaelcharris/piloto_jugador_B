@@ -2,6 +2,8 @@ from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer,
     Currency as c, currency_range
 )
+import random as rm
+
 author = 'Rafael'
 
 doc = """
@@ -31,11 +33,10 @@ class Player(BasePlayer):
     lotto = models.StringField(widget=widgets.RadioSelectHorizontal,
                                choices=[["A:", "perdida segura de 8000"], ["B:", "prob 20 de 0 y 80 de 9000"]]
                                )
-    #es posbile que me toca quitar todos los player de acá, es redunante
+
     def set_payoffs(self):
-        if self.lotto == "B":
-            import random as rm
-            prob = rm.random
+        if self.lotto == "B:":
+            prob = rm.random()
             if prob <= 0.8:
                 self.payoff = Constants.endowment - Constants.perdida_80
             else:
