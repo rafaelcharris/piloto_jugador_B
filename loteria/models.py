@@ -35,7 +35,8 @@ class Player(BasePlayer):
     def set_payoffs(self):
         if self.lotto == "B":
             import random as rm
-            if rm.random[0.0, 1.0] <= 0.8:
+            prob = rm.random[0.0, 1.0]
+            if prob <= 0.8:
                 self.payoff = Constants.endowment - Constants.perdida_80
             else:
                 self.payoff = Constants.endowment

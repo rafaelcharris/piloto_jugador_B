@@ -8,14 +8,13 @@ class pregunta(Page):
     form_model = 'player'
 
 class Results(Page):
-
     form_fields = ['lotto']
     form_model = 'player'
 
     def vars_for_template(self):
         payoff = self.player.set_payoffs()
         return dict(
-            payoff = payoff
+            lotto = self.player.lotto
         )
 
 page_sequence = [
