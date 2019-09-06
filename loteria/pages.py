@@ -13,9 +13,6 @@ class Results(Page):
 
     def vars_for_template(self):
         payoff = self.player.set_payoffs()
-        return dict(
-            lotto = self.player.lotto
-        )
 
 page_sequence = [
     pregunta,
