@@ -2,11 +2,14 @@
 {% load otree static %}
 
 {% block title %}
-    Page title
+    Resultados
 {% endblock %}
 
 {% block content %}
+{% formfield player.p_solution %}
 
+<p>Su respuesta fue {{player.is_correct}} porque escribió {{player.p_solution}}
+y la respuesta correcta era {{Constants.solution}}</p>
     {% next_button %}
 {% endblock %}
 
