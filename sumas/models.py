@@ -16,13 +16,11 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
 
-    #generate one problem
-    problem = [rm.randint(10,99) for x in range(5)]
-    solution = sum(problem)
-    print(solution)
-
 class Subsession(BaseSubsession):
-    pass
+    # generate one problem
+    def creating_session(self):
+        problem = [rm.randint(10,99) for x in range(5)]
+        solution = sum(problem)
 
 
 class Group(BaseGroup):
