@@ -16,7 +16,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
 
-    #generate one problem
+    #generate one problem: Esto no se recomienda. Mejor cambiarlo a subsession, pero no pude. Revisar.
     problem = [rm.randint(10,99) for x in range(5)]
     solution = sum(problem)
     print(solution)

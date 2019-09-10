@@ -7,13 +7,15 @@ class MyPage(Page):
     form_model = 'player'
     form_fields = ['p_solution']
 
+    def vars_for_template(self):
+        self.player.get_problems()
+
 class Results(Page):
     form_model = 'player'
     form_fields = ['p_solution', 'is_correct']
 
     def vars_for_template(self):
         self.player.check_answer()
-
 
 
 page_sequence = [

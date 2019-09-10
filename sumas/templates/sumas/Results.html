@@ -8,8 +8,10 @@
 {% block content %}
 {% formfield player.p_solution %}
 
-<p>Su respuesta fue {{player.is_correct}} porque escribió {{player.p_solution}}
-y la respuesta correcta era {{Constants.solution}}</p>
+<p>Su respuesta fue {{player.is_correct}} porque escribió {{subsession.p_solution}}
+y la respuesta correcta era {{subsession.solution}}</p>
+
+{{ form.is_correct.errors }}
     {% next_button %}
 {% endblock %}
 
