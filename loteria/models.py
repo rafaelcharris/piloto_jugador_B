@@ -34,6 +34,10 @@ class Player(BasePlayer):
                                choices=[["A:", "perdida segura de 8000 pesos"], ["B:", "probabilidad de 20% de "
                                                                                        "perder 0 y 80% de perder 9000"]]
                                )
+    #función que define el endowment
+    def set_endowment(self):
+        self.endowment = self.participant.payoff()
+    #todo call function later
     #Función que define los pagos
     def set_payoffs(self):
         if self.lotto == "B:":

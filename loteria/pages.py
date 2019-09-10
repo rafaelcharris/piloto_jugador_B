@@ -18,8 +18,14 @@ class appropriation(Page):
     form_fields = ['appr']
     form_model = 'player'
 
+
+class Final(Page):
+    form_fields = ['appr']
+    form_model = 'player'
+
 page_sequence = [
     pregunta,
     Results,
-    appropriation
+    appropriation,
+    Final
 ]
