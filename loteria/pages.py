@@ -3,9 +3,13 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 class pregunta(Page):
-
     form_fields = ['lotto']
     form_model = 'player'
+
+    def vars_for_template(self):
+        return dict(
+        endowment=self.participant.vars['pago1'],
+        )
 
 class Results(Page):
     form_fields = ['lotto']
@@ -18,8 +22,14 @@ class appropriation(Page):
     form_fields = ['appr']
     form_model = 'player'
 
+
+class Final(Page):
+    form_fields = ['appr']
+    form_model = 'player'
+
 page_sequence = [
     pregunta,
     Results,
-    appropriation
+    appropriation,
+    Final
 ]

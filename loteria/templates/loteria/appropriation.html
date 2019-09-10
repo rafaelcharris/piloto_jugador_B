@@ -13,12 +13,5 @@
 </p>
     {% formfield player.appr %}
 
-    {% if player.appr == 1 %}
-<p>Para completar su pago, regrese dentro de dos semanas, cuando el estudio haya terminado </br>
-    En este momento podrémos darle el resto de su pago
-</p>
-    {% else %]
-<p> usted eligío no tomar le 80% del otro jugador. Fin del juego</p>
-    {% endif %}
-
+    {% next_button %}
 {% endblock %}

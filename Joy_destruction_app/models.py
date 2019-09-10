@@ -15,7 +15,7 @@ class Constants(BaseConstants):
     name_in_url = 'Joy_destruction_app'
     players_per_group = 2
     num_rounds = 1
-
+    endowment = 0
     #constantes iniciales
     endowment = c(10000)
     destruction_factor = 1/2
@@ -34,3 +34,6 @@ class Player(BasePlayer):
     destroy = models.BooleanField(
         label = "¿Quiere destruir la mitad del dinero del otro jugador?"
     )
+
+    def get_payoff(self):
+        self.participant.vars['pago1'] = self.payoff
