@@ -8,7 +8,7 @@ class pregunta(Page):
 
     def vars_for_template(self):
         return dict(
-        endowment=self.participant.vars['pago1'],
+        endowment=Constants.endowment,
         )
 
 class Results(Page):

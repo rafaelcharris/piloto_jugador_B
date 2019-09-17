@@ -17,7 +17,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
     #Constantes iniciales
-    endowment = 0
+    endowment = c(10000)
     perdida_segura = 32000
     perdida_80 = 9000
 
@@ -45,11 +45,11 @@ class Player(BasePlayer):
             if prob <= 0.8:
                 #Uso self.participant.vars['pago1'] para guardar como payoff el pago del juego anterior (me toca
                 # definirlo en el juego anterior primero, pero luego lo puedo usar en las otras apps.
-                self.payoff = self.participant.vars['pago1'] - Constants.perdida_80
+                self.payoff = Constants.endowment -  Constants.perdida_80
             #Si no, haga que no pierda nada.
             else:
-                self.payoff = self.participant.vars['pago1']
+                self.payoff = Constants.endowment
         else:
-            self.payoff = self.participant.vars['pago1'] - Constants.perdida_segura
+            self.payoff = Constants.endowment - Constants.perdida_segura
 
     appr = models.BooleanField(label = "¿desea tomar el 80% de las ganancias de otro jugador?")

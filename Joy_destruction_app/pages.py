@@ -20,7 +20,6 @@ class Results(Page):
 
     #Esta funcion trae al template
     def vars_for_template(self):
-        self.player.get_payoff()
         return dict(
             penalty=Constants.penalty
             )

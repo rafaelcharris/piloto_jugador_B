@@ -21,9 +21,9 @@ class Constants(BaseConstants):
     destruction_factor = 1/2
     penalty =c(1000)
 
+
 class Subsession(BaseSubsession):
     pass
-
 
 class Group(BaseGroup):
     pass
@@ -34,6 +34,3 @@ class Player(BasePlayer):
     destroy = models.BooleanField(
         label = "¿Quiere destruir la mitad del dinero del otro jugador?"
     )
-
-    def get_payoff(self):
-        self.participant.vars['pago1'] = self.payoff
