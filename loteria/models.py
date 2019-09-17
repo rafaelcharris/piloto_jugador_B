@@ -18,7 +18,7 @@ class Constants(BaseConstants):
     num_rounds = 1
     #Constantes iniciales
     endowment = c(10000)
-    perdida_segura = 32000
+    perdida_segura = 8000
     perdida_80 = 9000
 
 
