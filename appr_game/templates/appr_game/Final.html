@@ -10,16 +10,6 @@ Resultado
     asista a una nueva sesión donde realizará una actividad diferente a la del día de hoy y donde le
     pagaremos el resultado de esta segunda parte. </p>
 {% formfield player.appr %}
-    {% if player.appr == 1 %}
-<p>Para completar su pago, regrese dentro de dos semanas, cuando el estudio haya terminado </br>
-    En este momento podremos darle el resto de su pago es {{participant.payoff}} </br>
-    Fin del juego.
-</p>
-    {% else %}
-<p> Usted eligío no tomar el 80% del otro jugador. Su pago total es de {{participant.payoff}}</br>
-    Fin del juego</p>
-    {% endif %}
-
     {% next_button %}
 
 {% endblock %}
