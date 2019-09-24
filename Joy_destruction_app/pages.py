@@ -54,8 +54,8 @@ class ResultsWaitPage(WaitPage):
 page_sequence = [
     instrucciones,
     MyPage,
-    ResultsWaitPage,
     Belief,
+    ResultsWaitPage,
     Results
 ]
 
