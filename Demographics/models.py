@@ -3,13 +3,11 @@ from otree.api import (
     Currency as c, currency_range
 )
 
-
 author = 'Rafael'
 
 doc = """
 Encuesta demográfica
 """
-
 
 class Constants(BaseConstants):
     name_in_url = 'Demographics'
@@ -24,6 +22,17 @@ class Subsession(BaseSubsession):
 class Group(BaseGroup):
     pass
 
+def preg_likert(label):
+    return models.IntegerField(
+        label = label,
+        choices = [1,2,3,4,5],
+        widget=widgets.Slider,
+    )
+def preg_cuatro(label):
+    return models.StringField(
+        label = label,
+        choices = ['No', 'Sí, una vez', 'Sí, más de una vez']
+    )
 
 class Player(BasePlayer):
     sexo =models.StringField(
@@ -53,4 +62,42 @@ class Player(BasePlayer):
     )
     peso = models.IntegerField(label = "¿Cuál es su peso en kilogramos?")
     altura = models.IntegerField(label = "¿Cuál es su altura en centímetros?")
+    riesgo_1 = preg_likert(label = '¿Cómo se considera usted? Normalmente ¿es usted una persona totalmente dispuesta a tomar riesgos o intenta evitar tomar riesgos? Por favor conteste usando la siguiente escala de uno a cinco, '
+                                   'donde uno indica “totalmente dispuesto a tomar riesgos” y cinco '
+                                   '“Totalmente contrario a tomar riesgos”. ')
+    riesgo_2 = preg_likert(label = 'Normalmente ¿es usted una persona totalmente dispuesta a tomar riesgos de carácter financiero o intenta evitar tomar riesgos financieros? Por favor conteste usando la siguiente escala de uno a cinco,'
+                                   ' donde uno indica “totalmente dispuesto a tomar riesgos” y cinco “Totalmente contrario a tomar riesgos”.')
+    gasto_no_plan = models.StringField(
+        label = 'Si tuviera que conseguir COP 600.000 en una semana para enfrentar un gasto no planeado, ¿qué tanta dificultad cree que tendría en conseguir el dinero?',
+        choices = ['No tendría dificultad', 'Tendría alguna dificultad, pero lo conseguiría', 'No sé si lo conseguiría', 'Definitivamente no lo conseguiría' ]
+    )
+    asalto_fisico = preg_cuatro(
+        label = '¿Ha sido objeto de asalto físico en los últimos doce meses?'
+    )
+    asalto_fisico_numero = models.IntegerField(
+        label = 'Por favor, indique cuántas veces:'
+    )
+    asalto_fisico_familiar = preg_cuatro(
+        label = "¿Algún familiar suyo ha sido objeto de asalto físico en los últimos doce meses?"
+    )
+    asalto_fisico_numero_familiar = models.IntegerField(
+        label='Por favor, cuántas veces:'
+    )
+    confrontacion = preg_cuatro(
+        label = '¿Se ha encontrado en medio de una confrontación que involucre el uso de pistolas u otras armas de fuego en los últimos cinco años?'
+    )
+    confrontacion_numero = models.IntegerField(
+        label = 'Por favor, indique cuántas veces:'
+    )
+    violencia = preg_cuatro(
+        label = '¿Ha sido objeto de violencia directa en los últimos doce meses?'
+    )
+    prob_atraco = preg_likert(
+        label = 'Cuál cree que es su probabilidad de ser víctima de un atraco en los próximos 12 meses?'
+                'Por favor conteste usando la siguiente escala de uno a cinco, donde uno indica “no muy probable” y 5 indica “muy probable”.'
+    )
+    barrio_violento = preg_likert(
+        label = '¿Está de acuerdo con la afirmación “el barrio donde vivo es violento”?'
+                'Por favor, conteste usando la siguiente escala de uno a cinco, donde uno indica “estoy totalmente en desacuerdo” y 5 indica “estoy totalmente de acuerdo”.'
+    )
     
