@@ -11,7 +11,7 @@ Encuesta demográfica
 
 class Constants(BaseConstants):
     name_in_url = 'Demographics'
-    players_per_group = None
+    players_per_group = 1
     num_rounds = 1
 
 
