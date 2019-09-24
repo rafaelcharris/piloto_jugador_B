@@ -2,8 +2,7 @@ from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer,
     Currency as c, currency_range
 )
-#Estew codigo funciona. Solo falta cuadrar la diapositiva de resultados.
-#escribir mejor las instrucciones
+
 author = 'Rafael'
 
 doc = """
