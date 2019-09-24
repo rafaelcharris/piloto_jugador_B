@@ -11,7 +11,7 @@ Encuesta demográfica
 
 class Constants(BaseConstants):
     name_in_url = 'Demographics'
-    players_per_group = 1
+    players_per_group = None
     num_rounds = 1
 
 
@@ -25,7 +25,7 @@ class Group(BaseGroup):
 def preg_likert(label):
     return models.IntegerField(
         label = label,
-        choices = [1,2,3,4,5],
+        min  = 1, max = 5,
         widget=widgets.Slider,
     )
 def preg_cuatro(label):
@@ -40,7 +40,10 @@ class Player(BasePlayer):
         choices =["Masculino", "Femenino", "Otro"],
         widget = widgets.RadioSelectHorizontal
     )
-    edad = models.IntegerField(label = '¿Cuál es su edad?', min = 13, max = 70),
+    edad = models.IntegerField(
+        label = '¿Cuál es su edad?',
+        min = 13, max = 70
+    )
     e_civil = models.StringField(label = '¿Cuál es su estado civil?')
     facultad = models.StringField(label = '¿Facultad?')
     carrera = models.StringField(label = 'Carrera')
@@ -53,7 +56,8 @@ class Player(BasePlayer):
         widget = widgets.RadioSelectHorizontal
     )
     ingresos = models.IntegerField( #dar choices?
-        label = "¿Cuál es el valor aproximado de sus ingresos mensuales en Salarios Mínimos (SMMLV=COP 828,116)?"
+        label = "¿Cuál es el valor aproximado de sus ingresos mensuales en Salarios Mínimos (SMMLV=COP 828,116)? "
+                "(ej. 1 salario mínimo mensual, 2 SMMLV, etc.)"
     )
     localidad = models.StringField(
         label = '¿Cuál es la localidad en la que usted reside?',
@@ -64,7 +68,8 @@ class Player(BasePlayer):
                    ]
     )
     peso = models.IntegerField(label = "¿Cuál es su peso en kilogramos?")
-    altura = models.IntegerField(label = "¿Cuál es su altura en centímetros?")
+    altura = models.IntegerField(label = "¿Cuál es su altura en centímetros?",
+                                 min = 50, max = 240)
     riesgo_1 = preg_likert(label = '¿Cómo se considera usted? Normalmente ¿es usted una persona totalmente dispuesta a tomar riesgos o intenta evitar tomar riesgos? Por favor conteste usando la siguiente escala de uno a cinco, '
                                    'donde uno indica “totalmente dispuesto a tomar riesgos” y cinco '
                                    '“Totalmente contrario a tomar riesgos”. ')
@@ -89,14 +94,14 @@ class Player(BasePlayer):
     confrontacion = preg_cuatro(
         label = '¿Se ha encontrado en medio de una confrontación que involucre el uso de pistolas u otras armas de fuego en los últimos cinco años?'
     )
-    confrontacion_numero = models.IntegerField(
+    confrontacion_numero = models.IntegerField( #todo puedo poner esto como opcional vacio (y todas las preguntas de cuánto)
         label = 'Por favor, indique cuántas veces:'
     )
     violencia = preg_cuatro(
         label = '¿Ha sido objeto de violencia directa en los últimos doce meses?'
     )
     prob_atraco = preg_likert(
-        label = 'Cuál cree que es su probabilidad de ser víctima de un atraco en los próximos 12 meses?'
+        label = 'Cuál cree que es su probabilidad de ser víctima de un atraco en los próximos 12 meses?' 
                 'Por favor conteste usando la siguiente escala de uno a cinco, donde uno indica “no muy probable” y 5 indica “muy probable”.'
     )
     barrio_violento = preg_likert(
@@ -122,10 +127,10 @@ class Player(BasePlayer):
     )
     botella = models.IntegerField(
         label = 'Imagine la siguiente situación: usted está de compras en una ciudad que no es familiar para usted y se da cuenta de que perdió el camino. Usted decide preguntarle a un extraño por indicaciones. El extraño ofrece llevarlo en su carro al destino que usted tenía. El viaje dura cerca de 20 minutos y le cuesta al extraño 20.000 pesos. El extraño no desea dinero por haberlo llevado. Usted lleva seis botellas de vino con usted. La botella más barata cuesta 5.000 pesos, la botella más cara cuesta 30.000 pesos. '
-                'Usted decide darle una de sus botellas al extraño como agradecimiento por el favor. ¿Cuál botella le daría?',
+                'Usted decide darle una de sus botellas al extraño como agradecimiento por el favor. ¿Cuál botella le daría?', #separar las preguntas para que sea más fácil de leer
         choices = ['Botella de 5.000 pesos', 'Botella de 10.000 pesos', 'Botella de 15.000 pesos', 'Botella de 20.000 pesos',
                    'Botella de 25.000 pesos', 'Botella de 30.000 pesos'],
-        widget=widgets.RadioSelectHorizontal
+        widget=widgets.RadioSelect
     )
     self_perception_justicia = models.FloatField(
         label = '¿Cómo se ve a usted mismo? ¿Es una persona que generalmente está dispuesta a castigar comportamientos injustos, incluso, si esto es costoso para usted?'
@@ -133,5 +138,5 @@ class Player(BasePlayer):
                 'También puede usar los valores intermedios para indicar dónde se encuentra en la escala.',
         min = 1,
         max = 10,
-        widget= widgets.Slider
+        widget= widgets.Slider #todo agregar otra función para el step?
     )
