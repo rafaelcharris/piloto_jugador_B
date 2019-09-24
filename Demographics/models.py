@@ -47,7 +47,8 @@ class Player(BasePlayer):
     ed_madre = models.StringField(label = "¿Cuál es el máximo nivel de educación alcanzado por su madre?")
     estrato = models.IntegerField(
         label = "De acuerdo con las facturas de sus servicios públicos, ¿cuál es el estrato de la vivienda actual donde reside?",
-        choices = [1,2,3,4,5,6]
+        choices = [1,2,3,4,5,6],
+        widget = widgets.RadioSelectHorizontal
     )
     ingresos = models.IntegerField( #dar choices?
         label = "¿Cuál es el valor aproximado de sus ingresos mensuales en Salarios Mínimos (SMMLV=COP 828,116)?"
@@ -100,4 +101,35 @@ class Player(BasePlayer):
         label = '¿Está de acuerdo con la afirmación “el barrio donde vivo es violento”?'
                 'Por favor, conteste usando la siguiente escala de uno a cinco, donde uno indica “estoy totalmente en desacuerdo” y 5 indica “estoy totalmente de acuerdo”.'
     )
-    
+    barrio_ayuda = models.BooleanField(
+        label = 'Si usted llegara a necesitar ayuda, ¿acudiría a alguien desconocido de su mismo barrio?'
+    )
+    barrio_seguro = models.BooleanField(
+        label = '¿Se siente seguro mientras camina en la tarde en su barrio?'
+    )
+    estrato_esperado = models.IntegerField(
+        label = '¿Cuál es el estrato de la vivienda donde usted espera vivir a lo largo de su vida?',
+        choices = [1,2,3,4,5,6],
+        widget = widgets.RadioSelectHorizontal
+    )
+
+    elecciones = models.IntegerField(
+        label = '¿Con qué frecuencia vota en las elecciones políticas?',
+        choices = ["Todas las veces", "Casi siempre", "Raramente", "Nunca"],
+        widget= widgets.RadioSelectHorizontal
+    )
+    botella = models.IntegerField(
+        label = 'Imagine la siguiente situación: usted está de compras en una ciudad que no es familiar para usted y se da cuenta de que perdió el camino. Usted decide preguntarle a un extraño por indicaciones. El extraño ofrece llevarlo en su carro al destino que usted tenía. El viaje dura cerca de 20 minutos y le cuesta al extraño 20.000 pesos. El extraño no desea dinero por haberlo llevado. Usted lleva seis botellas de vino con usted. La botella más barata cuesta 5.000 pesos, la botella más cara cuesta 30.000 pesos. '
+                'Usted decide darle una de sus botellas al extraño como agradecimiento por el favor. ¿Cuál botella le daría?',
+        choices = ['Botella de 5.000 pesos', 'Botella de 10.000 pesos', 'Botella de 15.000 pesos', 'Botella de 20.000 pesos',
+                   'Botella de 25.000 pesos', 'Botella de 30.000 pesos'],
+        widget=widgets.RadioSelectHorizontal
+    )
+    self_perception_justicia = models.FloatField(
+        label = '¿Cómo se ve a usted mismo? ¿Es una persona que generalmente está dispuesta a castigar comportamientos injustos, incluso, si esto es costoso para usted?'
+                'Por favor use una escala de 0 a 10, donde 0 significa que usted “no está dispuesto a incurrir en costos para castigar comportamientos injustos” y 10 significa que usted “está muy dispuesto a incurrir en costos para castigar comportamientos injustos”. '
+                'También puede usar los valores intermedios para indicar dónde se encuentra en la escala.',
+        min = 1,
+        max = 10,
+        widget= widgets.Slider
+    )
