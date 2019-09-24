@@ -7,8 +7,7 @@ import random as rm
 author = 'Rafael'
 
 doc = """
-Loteria en framing de perdida para inducir a que 
-tomen en la siguiente tarea y tener medida de preferencias hacia el riesgo 
+Juego de apropiación
 """
 
 
@@ -18,8 +17,6 @@ class Constants(BaseConstants):
     num_rounds = 1
     #Constantes iniciales
     endowment = c(10000)
-    perdida_segura = 8000
-    perdida_80 = 9000
 
 
 class Subsession(BaseSubsession):
@@ -30,5 +27,6 @@ class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
-    
-    appr = models.BooleanField(label = "¿desea tomar el 80% de las ganancias de otro jugador?")
+
+    appr = models.BooleanField(label = "¿Desea apropiarse del 80% de los puntos obtenidos en la actividad \
+    de las sumas por otro participante en el estudio")
