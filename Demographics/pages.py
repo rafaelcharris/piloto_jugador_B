@@ -10,11 +10,10 @@ class Cuestionario(Page):
     form_model = 'player'
 class Medidas(Page):
     form_model = 'player'
-    form_fields = ['riesgo_1', 'riesgo_2', 'gasto_no_plan', 'asalto_físico', 'asalto_fisico_familiar',
-                   'confrontacion', 'violencia', 'prob_atraco', 'barrio_violento', 'barrio_ayuda',
+    form_fields = ['riesgo_1', 'riesgo_2', 'gasto_no_plan', 'asalto_fisico', 'asalto_fisico_numero', 'asalto_fisico_familiar',
+                   'asalto_fisico_numero_familiar','confrontacion', 'confrontacion_numero', 'violencia', 'prob_atraco', 'barrio_violento', 'barrio_ayuda',
                    'barrio_seguro', 'estrato_esperado', 'elecciones', 'botella',
                    'self_perception_justicia']
-
 
 page_sequence = [
     Cuestionario,

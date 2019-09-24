@@ -37,7 +37,9 @@ def preg_cuatro(label):
 class Player(BasePlayer):
     sexo =models.StringField(
         label= '¿Cuál es su sexo',
-        choices =["Masculino", "Femenino", "Otro"])
+        choices =["Masculino", "Femenino", "Otro"],
+        widget = widgets.RadioSelectHorizontal
+    )
     edad = models.IntegerField(label = '¿Cuál es su edad?', min = 13, max = 70),
     e_civil = models.StringField(label = '¿Cuál es su estado civil?')
     facultad = models.StringField(label = '¿Facultad?')
