@@ -38,11 +38,11 @@ class Player(BasePlayer):
     sexo =models.StringField(
         label= '¿Cuál es su sexo',
         choices =["Masculino", "Femenino", "Otro"])
-    edad = models.IntegerField(label = '¿Cuál es su edad?')
+    edad = models.IntegerField(label = '¿Cuál es su edad?', min = 13, max = 70),
     e_civil = models.StringField(label = '¿Cuál es su estado civil?')
     facultad = models.StringField(label = '¿Facultad?')
     carrera = models.StringField(label = 'Carrera')
-    times_matriculado = models.IntegerField(label = "¿Cuántas veces se ha matriculado contando el actual semestre?")
+    veces_matriculado = models.IntegerField(label = "¿Cuántas veces se ha matriculado contando el actual semestre?")
     ed_padre = models.StringField(label = "¿Cuál es el máximo nivel de educación alcanzado por su padre?")
     ed_madre = models.StringField(label = "¿Cuál es el máximo nivel de educación alcanzado por su madre?")
     estrato = models.IntegerField(
