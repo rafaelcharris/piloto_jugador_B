@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Creencia
+{% endblock %}
+
+{% block content %}
+<p>
+    Ahora le daremos la oportunidad de ganar unos pesos más.
+    Queremos que declare sus expectativas sobre el comportamiento de la persona con la cual ha sido emparejado.
+    Si su expectativa es correcta, usted ganará 1 moneda experimental extra.
+    </p>
+{% formfield player.appr %}
+
+    {% next_button %}
+{% endblock %}

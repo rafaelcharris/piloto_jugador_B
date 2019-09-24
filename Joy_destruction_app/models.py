@@ -35,3 +35,7 @@ class Player(BasePlayer):
         label = "¿Usted quiere pagar una moneda experimental para reducir la \
         dotación inicial de la persona con la que fue emparejado?"
     )
+
+    appr = models.BooleanField(
+        label = "Mi expectativa es que La otra persona decidió dejar mi dotación inicial tal y como está"
+    )

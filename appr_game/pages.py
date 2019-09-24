@@ -6,11 +6,11 @@ class appropriation(Page):
     form_fields = ['appr']
     form_model = 'player'
 
-class Final(Page):
+class Results(Page):
     form_fields = ['appr']
     form_model = 'player'
 
 page_sequence = [
     appropriation,
-    Final
+    Results
 ]
