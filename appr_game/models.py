@@ -12,7 +12,7 @@ Juego de apropiación
 
 
 class Constants(BaseConstants):
-    name_in_url = 'loteria'
+    name_in_url = 'appr_game'
     players_per_group = None
     num_rounds = 1
     #Constantes iniciales

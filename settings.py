@@ -16,7 +16,7 @@ SESSION_CONFIGS = [
         'name': 'JugadorB',
         'display_name': "B",
         'num_demo_participants': 2,
-        'app_sequence': ['loteria','Joy_destruction_app'],
+        'app_sequence': ['appr_game','Joy_destruction_app'],
     },
 ]
 
