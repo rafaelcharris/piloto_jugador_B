@@ -10,11 +10,15 @@
 {% formfield player.destroy %}
 
 {% if player.destroy == 1 %}
-    <p> Usted destruyó </p>
+    <p> Usted destruyó la mitad de la dotación del otro jugador</p>
 {% endif %}
 {% if player.payoff < 8000 %}
-    <p>A usted le destruyeron la mitad de su dinero</p>
+    <p>a usted le destruyeron la mitad de su dinero</p>
 {% endif %}
+{% if.player.belief_is_correct == 1%}
+<p>
+    Además, gana una unidad exerimental más porque su creencia acerca del comportamiento del otro jugador fue correcta
+</p>
 <p>
     Su pago total es {{player.payoff}}
 </p>
