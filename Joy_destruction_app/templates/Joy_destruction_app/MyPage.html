@@ -1,7 +1,7 @@
 {% extends "global/Page.html" %}
 {% load otree static %}
 
-{% block title %} Juego {% endblock %}
+{% block title %} Decisión {% endblock %}
 
 {% block content %}
 <p>
@@ -9,6 +9,11 @@
 </p>
 <!--El código de abajo funciona porque en pages.py definí una clase "player" que tiene destroy y
  esto lo definí en models.py. destroy es un boolean que se le pregunta al usuario-->
-    {% formfield player.destroy %}
+<p>
+Si usted elige “SÍ”, usted incurrirá en un costo de 1 moneda experimental y la dotación inicial de la persona con la que está interactuando se reducirá en 5 monedas experimentales. La otra persona tomará simultáneamente la misma decisión.
+
+Por favor piense cuidadosamente su decisión.
+</p>
+{% formfield player.destroy %}
     {% next_button %}
 {% endblock %}

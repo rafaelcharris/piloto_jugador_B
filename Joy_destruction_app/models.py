@@ -17,9 +17,9 @@ class Constants(BaseConstants):
     num_rounds = 1
     endowment = 0
     #constantes iniciales
-    endowment = c(10000)
+    endowment = 10
     destruction_factor = 1/2
-    penalty =c(1000)
+    penalty = 1
 
 
 class Subsession(BaseSubsession):
@@ -32,5 +32,6 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     #Acá el usuario escribe si decide o no destruir
     destroy = models.BooleanField(
-        label = "¿Quiere destruir la mitad del dinero del otro jugador?"
+        label = "¿Usted quiere pagar una moneda experimental para reducir la \
+        dotación inicial de la persona con la que fue emparejado?"
     )
