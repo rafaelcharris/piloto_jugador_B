@@ -38,13 +38,18 @@ class ResultsWaitPage(WaitPage):
         p1 = group.get_player_by_id(1)
         p2 = group.get_player_by_id(2)
 
+        p1_correct_belief = p1.belief == p2.destroy
+        p2_correct_belief = p2.belief == p1.destroy
         #Mejor función de pago.
         #para no hacer ifs, es mejor usar multiplicación que sea cero si el jugador no tomó la decisión de destruir
         #y así mismo que se active la penalty si yo decidí destruir.
+        #Agregar el último término p1.belief*p2.destroy-> esto debería ser uno cuándo el belief y la acción son iguales y 0 cuándo
+        #son distintos, pero no funciona!
         p1.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p2.destroy)) - \
-                    (int(p1.destroy) * Constants.penalty)
+                    (int(p1.destroy) * Constants.penalty) + p1_correct_belief
         p2.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p1.destroy)) - \
-                    (int(p2.destroy) * Constants.penalty)
+                    (int(p2.destroy) * Constants.penalty) + p2_correct_belief
+
 
 page_sequence = [
     instrucciones,
