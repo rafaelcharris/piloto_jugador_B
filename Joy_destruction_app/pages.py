@@ -43,8 +43,7 @@ class ResultsWaitPage(WaitPage):
         #Mejor función de pago.
         #para no hacer ifs, es mejor usar multiplicación que sea cero si el jugador no tomó la decisión de destruir
         #y así mismo que se active la penalty si yo decidí destruir.
-        #Agregar el último término p1.belief*p2.destroy-> esto debería ser uno cuándo el belief y la acción son iguales y 0 cuándo
-        #son distintos, pero no funciona!
+        #El último término suma 1 punto más al pago si el belief es igual al pago del otro jugador.
         p1.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p2.destroy)) - \
                     (int(p1.destroy) * Constants.penalty) + p1_correct_belief
         p2.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p1.destroy)) - \
