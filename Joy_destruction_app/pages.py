@@ -24,6 +24,10 @@ class Results(Page):
             penalty=Constants.penalty
             )
 
+class Belief(Page):
+    form_model = 'player'
+    form_fields = ['belief']
+
 class ResultsWaitPage(WaitPage):
     #Hacer calculos del payoff
     def after_all_players_arrive(self):
@@ -46,6 +50,7 @@ page_sequence = [
     instrucciones,
     MyPage,
     ResultsWaitPage,
+    Belief,
     Results
 ]
 
