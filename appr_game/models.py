@@ -31,3 +31,4 @@ class Player(BasePlayer):
     appr = models.BooleanField(label = "¿Desea apropiarse del 80% de los puntos obtenidos en la actividad \
     de las sumas por otro participante en el estudio")
 
+    #todo poner sí por defecto y ponerle tilde
