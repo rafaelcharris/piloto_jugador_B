@@ -35,6 +35,8 @@ class Player(BasePlayer):
         dotación inicial de la persona con la que fue emparejado?"
     )
 
-    belief = models.BooleanField(
-        label = "Mi expectativa es que la otra persona decidió dejar mi dotación inicial tal y como está"
+    belief = models.StringField(
+        label = "Mi expectativa es:",
+        options = ["que la otra persona decidió dejar mi dotación inicial tal y como está",
+        "La otra persona decidió reducir mi dotación inicial"]
     )
