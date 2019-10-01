@@ -32,5 +32,4 @@ class Player(BasePlayer):
         label = "¿Desea apropiarse del 80% de los puntos obtenidos en la actividad \
     de las sumas por otro participante en el estudio",
         initial="sí",
-        choices=["Sí", "No"],
-        widget= widgets.RadioSelectHorizontal)
+        choices=["Sí", "No"])
