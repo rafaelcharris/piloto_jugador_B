@@ -27,10 +27,8 @@ class app_1_addition_task(Page):
             return self.participant.vars['expiry'] - time.time()
 
     def is_displayed(self):
-        if self.player.round_number <= 50:
-            return self.participant.vars['expiry'] - time.time() > 0
-        elif self.player.round_number > 50 and self.player.round_number <= 100:
-            return self.participant.vars['expiry'] - time.time() > 0
+        return self.participant.vars['expiry'] - time.time() > 0
+
 
     def vars_for_template(self):
 
