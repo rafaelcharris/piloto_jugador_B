@@ -132,7 +132,7 @@ class Player(BasePlayer):
                    'Botella de 25.000 pesos', 'Botella de 30.000 pesos'],
         widget=widgets.RadioSelect
     )
-    self_perception_justicia = models.FloatField(
+    self_perception_justicia = models.IntegerField(
         label = '¿Cómo se ve a usted mismo? ¿Es una persona que generalmente está dispuesta a castigar comportamientos injustos, incluso, si esto es costoso para usted?'
                 'Por favor use una escala de 0 a 10, donde 0 significa que usted “no está dispuesto a incurrir en costos para castigar comportamientos injustos” y 10 significa que usted “está muy dispuesto a incurrir en costos para castigar comportamientos injustos”. '
                 'También puede usar los valores intermedios para indicar dónde se encuentra en la escala.',
