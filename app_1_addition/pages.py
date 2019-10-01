@@ -10,15 +10,27 @@ class app_1_addition_intro(Page):
         return self.player.round_number == 1
 
     # http://otree.readthedocs.io/en/latest/timeouts.html (timer)
-    #def before_next_page(self):
-    #    self.participant.vars['expiry'] = time.time() + Constants.time_limit
-    #    #self.subsession.tratamientos()
+    def before_next_page(self):
+        self.participant.vars['expiry'] = time.time() + Constants.time_limit
+        #self.subsession.tratamientos()
 
 
 class app_1_addition_task(Page):
 
     form_model = 'player'
     form_fields = ['answer']
+
+    def get_timeout_seconds(self):
+        if self.player.round_number <= 50:
+            return self.participant.vars['expiry'] - time.time()
+        elif self.player.round_number > 50 and self.player.round_number <= 100:
+            return self.participant.vars['expiry'] - time.time()
+
+    def is_displayed(self):
+        if self.player.round_number <= 50:
+            return self.participant.vars['expiry'] - time.time() > 0
+        elif self.player.round_number > 50 and self.player.round_number <= 100:
+            return self.participant.vars['expiry'] - time.time() > 0
 
     def vars_for_template(self):
 
@@ -69,6 +81,7 @@ class app_1_addition_announcement(Page):
 
     def before_next_page(self):
         self.player.report_addition()
+        self.participant.vars['expiry'] = time.time() + Constants.time_limit
 
 
 page_sequence = [
