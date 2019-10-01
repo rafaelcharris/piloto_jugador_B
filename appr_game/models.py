@@ -28,8 +28,12 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
 
-    appr = models.StringField(
+    appr = models.BooleanField(
         label = "¿Desea apropiarse del 80% de los puntos obtenidos en la actividad \
     de las sumas por otro participante en el estudio",
-        initial="sí",
-        choices=["Sí", "No"])
+        initial=True,
+        choices=[
+            [True, "Sí"], #Esto hace que pueda usar el boolean, pero cambio las opciones que ve el jugador
+            [False, "No"]
+        ]
+    )
