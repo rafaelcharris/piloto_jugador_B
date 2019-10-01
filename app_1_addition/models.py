@@ -18,7 +18,7 @@ class Constants(BaseConstants):
     num_rounds = 10
 
     half_way = (num_rounds/2)
-    time_limit = 10
+    time_limit = 60*4
     shock = 0.2
     piece_rate = 1000 #this code is in settings.py
 
