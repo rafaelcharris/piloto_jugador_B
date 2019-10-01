@@ -5,15 +5,16 @@
 
 {% block content %}
 <p>
-    A continuación, usted tendrá la oportunidad de destruir la mitad del dinero del otro jugador.
+    Por favor tome su decisión:
+    Su dotación inicial en esta actividad es 10 monedas experimentales.
+    </br>
+    Si usted elige “SÍ”, usted incurrirá en un costo de 1 moneda experimental y la dotación inicial de la persona con la que está interactuando se reducirá en 5 monedas experimentales.
+    La otra persona tomará simultáneamente la misma decisión.
 </p>
 <!--El código de abajo funciona porque en pages.py definí una clase "player" que tiene destroy y
  esto lo definí en models.py. destroy es un boolean que se le pregunta al usuario-->
-<p>
-Si usted elige “SÍ”, usted incurrirá en un costo de 1 moneda experimental y la dotación inicial de la persona con la que está interactuando se reducirá en 5 monedas experimentales. La otra persona tomará simultáneamente la misma decisión.
 
-Por favor piense cuidadosamente su decisión.
-</p>
 {% formfield player.destroy %}
+
     {% next_button %}
 {% endblock %}

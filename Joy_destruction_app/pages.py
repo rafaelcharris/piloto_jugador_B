@@ -6,7 +6,8 @@ class instrucciones(Page):
     form_model = 'player'
     def vars_for_template(self):
         return dict(
-            penalty = Constants.penalty
+            penalty = Constants.penalty,
+            endowment = Constants.endowment
         )
 
 class MyPage(Page):

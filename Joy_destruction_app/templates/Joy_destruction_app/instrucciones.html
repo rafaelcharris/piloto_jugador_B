@@ -6,24 +6,33 @@
 {% endblock %}
 
 {% block content %}
-
-<br>
+<p>
     Esta es la tercera parte del estudio. Usted interactuará con otra persona.
-    Ninguna persona sabrá la identidad de la otra persona.
+    Ninguna persona sabrá la identidad de su contraparte.
     Sin embargo, es alguien entre todos los participantes que están en este momento en el salón.
     Quién será, el computador lo determinará más adelante a través de un sorteo.
-    La cantidad de dinero que puede ganar en esta actividad dependerá de sus decisiones y de las decisiones de la persona con la que sea emparejado. </br>
+    La cantidad de dinero que puede ganar en esta actividad dependerá de sus decisiones y de las decisiones de la persona con la que sea emparejado.
+</p>
 
-Para esta segunda parte, usted y la persona con la que interactuará recibirán como dotación inicial {{Constants.endowment}} monedas experimentales cada uno.
-    Cada moneda experimental equivale a COP 1.000. Ustedes tienen que decidir si reducir la dotación inicial del otro o si dejarla tal como está.
-    Reducir la dotación inicial del otro le va a costar a usted {{penalty}} moneda experimental. Pagando 1 moneda experimental, usted puede recudir la dotación inicial del otro en 5 unidades experimentales.
+<p>
+Para esta segunda parte, usted y la persona con la que interactuará recibirán como dotación inicial {{endowment}} monedas experimentales cada uno.
+    Cada moneda experimental equivale a COP 1.000.
+    Ustedes tienen que decidir si reducir la dotación inicial del otro o si dejarla tal como está.
+    Reducir la dotación inicial del otro le va a costar a usted 1 moneda experimental.
+    Pagando 1 moneda experimental, usted puede recudir la dotación inicial del otro en 5 unidades experimentales.
     El otro participante incurrirá en el mismo costo (1 moneda experimental) si él o ella decide reducir su dotación inicial. Note que solo pueden pasar cuatro cosas:
-    <ol type = "1">
+<ol type = "1">
     <li>Si ambos deciden dejar la dotación inicial tal como está, ambos ganarán 10 monedas experimentales; </li>
     <li>Si ambos deciden reducir la dotación inicial del otro, ambos ganarán 4 monedas experimentales (10-5-1); </li>
-    <li>Si usted decide reducir la dotación inicial del otro, pero él o ella decide dejar su dotación inicial tal como está, entonces, usted ganará 9 monedas experimentales y la otra persona ganará 5 monedas experimentales;</li>
-    <li>Si usted decide dejar la dotación inicial del otro tal como está, pero él o ella decide reducir su dotación inicial, entonces, usted ganará 5 monedas experimentales y la otra persona ganará 9 monedas experimentales.</li>
+    <li>Si usted decide reducir la dotación inicial del otro, pero él o ella decide dejar su dotación inicial tal como está,
+        entonces, usted ganará 9 monedas experimentales y la otra persona ganará 5 monedas experimentales;</li>
+    <li>Si usted decide dejar la dotación inicial del otro tal como está, pero él o ella decide reducir su dotación inicial
+        entonces, usted ganará 5 monedas experimentales y la otra persona ganará 9 monedas experimentales.</li>
 </ol>
+</p>
+<p>Recuerde que el resultado de esta parte, se lo pagaremos cuando usted asista a la nueva sesión.
+    Si usted no puede asistir a esta nueva sesión no se preocupe que nosotros, de igual manera, le pagaremos el resultado de sus decisiones.
+    Si este es el caso, por favor informar al finalizar la sesión del día de hoy a alguno de los asistentes.
 </p>
 
     {% next_button %}
