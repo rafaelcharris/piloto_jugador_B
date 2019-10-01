@@ -37,6 +37,6 @@ class Player(BasePlayer):
 
     belief = models.StringField(
         label = "Mi expectativa es:",
-        options = ["que la otra persona decidió dejar mi dotación inicial tal y como está",
+        choices = ["que la otra persona decidió dejar mi dotación inicial tal y como está",
         "La otra persona decidió reducir mi dotación inicial"]
     )
