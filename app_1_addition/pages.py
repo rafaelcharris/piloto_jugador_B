@@ -21,10 +21,7 @@ class app_1_addition_task(Page):
     form_fields = ['answer']
 
     def get_timeout_seconds(self):
-        if self.player.round_number <= 50:
-            return self.participant.vars['expiry'] - time.time()
-        elif self.player.round_number > 50 and self.player.round_number <= 100:
-            return self.participant.vars['expiry'] - time.time()
+        return self.participant.vars['expiry'] - time.time()
 
     def is_displayed(self):
         return self.participant.vars['expiry'] - time.time() > 0
