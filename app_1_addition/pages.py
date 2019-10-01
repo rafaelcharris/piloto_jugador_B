@@ -12,7 +12,7 @@ class app_1_addition_intro(Page):
     # http://otree.readthedocs.io/en/latest/timeouts.html (timer)
     def before_next_page(self):
         self.participant.vars['expiry'] = time.time() + Constants.time_limit
-        #self.subsession.tratamientos()
+
 
 
 class app_1_addition_task(Page):
