@@ -35,7 +35,7 @@ ROOMS = [
 'name': 'Estudio',
 'display_name': 'Estudio',
 }
-]]
+]
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
