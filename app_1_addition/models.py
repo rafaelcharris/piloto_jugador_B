@@ -15,7 +15,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'app_1_addition'
     players_per_group = None
-    num_rounds = 10
+    num_rounds = 60
 
     half_way = (num_rounds/2)
     time_limit = 60*4
