@@ -120,12 +120,12 @@ class Player(BasePlayer):
         widget = widgets.RadioSelectHorizontal
     )
 
-    elecciones = models.IntegerField(
+    elecciones = models.StringField(
         label = '¿Con qué frecuencia vota en las elecciones políticas?',
         choices = ["Todas las veces", "Casi siempre", "Raramente", "Nunca"],
         widget= widgets.RadioSelectHorizontal
     )
-    botella = models.IntegerField(
+    botella = models.StringField(
         label = 'Imagine la siguiente situación: usted está de compras en una ciudad que no es familiar para usted y se da cuenta de que perdió el camino. Usted decide preguntarle a un extraño por indicaciones. El extraño ofrece llevarlo en su carro al destino que usted tenía. El viaje dura cerca de 20 minutos y le cuesta al extraño 20.000 pesos. El extraño no desea dinero por haberlo llevado. Usted lleva seis botellas de vino con usted. La botella más barata cuesta 5.000 pesos, la botella más cara cuesta 30.000 pesos. '
                 'Usted decide darle una de sus botellas al extraño como agradecimiento por el favor. ¿Cuál botella le daría?', #separar las preguntas para que sea más fácil de leer
         choices = ['Botella de 5.000 pesos', 'Botella de 10.000 pesos', 'Botella de 15.000 pesos', 'Botella de 20.000 pesos',
