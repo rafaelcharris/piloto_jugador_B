@@ -83,19 +83,22 @@ class Player(BasePlayer):
         label = '¿Ha sido objeto de asalto físico en los últimos doce meses?'
     )
     asalto_fisico_numero = models.IntegerField(
-        label = 'Por favor, indique cuántas veces:'
+        label = 'Por favor, indique cuántas veces:',
+        blank=True
     )
     asalto_fisico_familiar = preg_cuatro(
         label = "¿Algún familiar suyo ha sido objeto de asalto físico en los últimos doce meses?"
     )
     asalto_fisico_numero_familiar = models.IntegerField(
-        label='Por favor, cuántas veces:'
+        label='Por favor, cuántas veces:',
+        blank = True
     )
     confrontacion = preg_cuatro(
         label = '¿Se ha encontrado en medio de una confrontación que involucre el uso de pistolas u otras armas de fuego en los últimos cinco años?'
     )
-    confrontacion_numero = models.IntegerField( #todo puedo poner esto como opcional vacio (y todas las preguntas de cuánto)
-        label = 'Por favor, indique cuántas veces:'
+    confrontacion_numero = models.IntegerField(
+        label = 'Por favor, indique cuántas veces:',
+        blank = True
     )
     violencia = preg_cuatro(
         label = '¿Ha sido objeto de violencia directa en los últimos doce meses?'
@@ -120,12 +123,12 @@ class Player(BasePlayer):
         widget = widgets.RadioSelectHorizontal
     )
 
-    elecciones = models.IntegerField(
+    elecciones = models.StringField(
         label = '¿Con qué frecuencia vota en las elecciones políticas?',
         choices = ["Todas las veces", "Casi siempre", "Raramente", "Nunca"],
         widget= widgets.RadioSelectHorizontal
     )
-    botella = models.IntegerField(
+    botella = models.StringField(
         label = 'Imagine la siguiente situación: usted está de compras en una ciudad que no es familiar para usted y se da cuenta de que perdió el camino. Usted decide preguntarle a un extraño por indicaciones. El extraño ofrece llevarlo en su carro al destino que usted tenía. El viaje dura cerca de 20 minutos y le cuesta al extraño 20.000 pesos. El extraño no desea dinero por haberlo llevado. Usted lleva seis botellas de vino con usted. La botella más barata cuesta 5.000 pesos, la botella más cara cuesta 30.000 pesos. '
                 'Usted decide darle una de sus botellas al extraño como agradecimiento por el favor. ¿Cuál botella le daría?', #separar las preguntas para que sea más fácil de leer
         choices = ['Botella de 5.000 pesos', 'Botella de 10.000 pesos', 'Botella de 15.000 pesos', 'Botella de 20.000 pesos',
