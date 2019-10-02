@@ -83,19 +83,22 @@ class Player(BasePlayer):
         label = '¿Ha sido objeto de asalto físico en los últimos doce meses?'
     )
     asalto_fisico_numero = models.IntegerField(
-        label = 'Por favor, indique cuántas veces:'
+        label = 'Por favor, indique cuántas veces:',
+        blank=True
     )
     asalto_fisico_familiar = preg_cuatro(
         label = "¿Algún familiar suyo ha sido objeto de asalto físico en los últimos doce meses?"
     )
     asalto_fisico_numero_familiar = models.IntegerField(
-        label='Por favor, cuántas veces:'
+        label='Por favor, cuántas veces:',
+        blank = True
     )
     confrontacion = preg_cuatro(
         label = '¿Se ha encontrado en medio de una confrontación que involucre el uso de pistolas u otras armas de fuego en los últimos cinco años?'
     )
-    confrontacion_numero = models.IntegerField( #todo puedo poner esto como opcional vacio (y todas las preguntas de cuánto)
-        label = 'Por favor, indique cuántas veces:'
+    confrontacion_numero = models.IntegerField(
+        label = 'Por favor, indique cuántas veces:',
+        blank = True
     )
     violencia = preg_cuatro(
         label = '¿Ha sido objeto de violencia directa en los últimos doce meses?'
