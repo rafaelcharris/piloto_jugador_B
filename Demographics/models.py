@@ -141,7 +141,7 @@ class Player(BasePlayer):
                 'También puede usar los valores intermedios para indicar dónde se encuentra en la escala.',
         min = 1,
         max = 10,
-        widget= widgets.Slider #todo agregar otra función para el step?
+        widget= widgets.Slider
     )
 
     impuesto = preg_likert(

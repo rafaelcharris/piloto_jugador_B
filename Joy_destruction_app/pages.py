@@ -41,6 +41,11 @@ class ResultsWaitPage(WaitPage):
 
         p1_correct_belief = p1.belief == p2.destroy
         p2_correct_belief = p2.belief == p1.destroy
+
+        #Agregar el belief_is_correct a la base
+        self.p1.belief_is_correct == p1_correct_belief
+        self.p2.belief_is_correct == p2_correct_belief
+
         #Mejor función de pago.
         #para no hacer ifs, es mejor usar multiplicación que sea cero si el jugador no tomó la decisión de destruir
         #y así mismo que se active la penalty si yo decidí destruir.
