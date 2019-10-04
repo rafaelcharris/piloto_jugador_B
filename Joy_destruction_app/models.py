@@ -42,3 +42,6 @@ class Player(BasePlayer):
         [False, "La otra persona decidió reducir mi dotación inicial"]
         ]
     )
+
+    #agregar si el belief es correcto
+    belief_is_correct = models.BooleanField()
