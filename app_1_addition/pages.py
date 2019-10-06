@@ -13,8 +13,6 @@ class app_1_addition_intro(Page):
     def before_next_page(self):
         self.participant.vars['expiry'] = time.time() + Constants.time_limit
 
-
-
 class app_1_addition_task(Page):
 
     form_model = 'player'
@@ -25,7 +23,6 @@ class app_1_addition_task(Page):
 
     def is_displayed(self):
         return self.participant.vars['expiry'] - time.time() > 0
-
 
     def vars_for_template(self):
 
@@ -76,7 +73,6 @@ class app_1_addition_announcement(Page):
 
     def before_next_page(self):
         self.player.report_addition()
-        self.participant.vars['expiry'] = time.time() + Constants.time_limit
 
 
 page_sequence = [
