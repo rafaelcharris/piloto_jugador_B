@@ -7,6 +7,6 @@ from .models import Constants
 class PlayerBot(Bot):
     import random
         #dele click a la página de las instrucciones
-    yield pages.appropriation, dict(random.randint(1,0))
+    yield pages.appropriation, dict(appr = bool(random.getrandbits(1))))
         #juege la última página
     yield pages.Results
