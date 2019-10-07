@@ -5,6 +5,8 @@ from .models import Constants
 
 
 class PlayerBot(Bot):
-
-    def play_round(self):
-        pass
+    import random
+        #dele click a la página de las instrucciones
+    yield pages.appropriation, dict(random.randint(1,0))
+        #juege la última página
+    yield pages.Results
