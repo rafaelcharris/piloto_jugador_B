@@ -3,8 +3,13 @@ from . import pages
 from ._builtin import Bot
 from .models import Constants
 
-
 class PlayerBot(Bot):
-
-    def play_round(self):
-        pass
+    import random
+        #dele click a la página de las instrucciones
+    yield pages.instrucciones
+        #Juegue jod: elija aleatoriamente un número entre 1 y 0 
+    yield pages.MyPage, dict(answer = random.randint(1,0))
+        #juege la página de creencias
+    yield pages.Belief, dict(answer = random.randint(1,0))
+        #juege la última página
+    yield pages.Results
