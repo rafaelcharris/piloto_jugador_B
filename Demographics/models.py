@@ -55,10 +55,6 @@ class Player(BasePlayer):
         choices = [1,2,3,4,5,6],
         widget = widgets.RadioSelectHorizontal
     )
-    ingresos = models.IntegerField( #dar choices?
-        label = "¿Cuál es el valor aproximado de sus ingresos mensuales en Salarios Mínimos (SMMLV=COP 828,116)? "
-                "(ej. 1 salario mínimo mensual, 2 SMMLV, etc.)"
-    )
     localidad = models.StringField(
         label = '¿Cuál es la localidad en la que usted reside?',
         choices = ["No vivo en Bogotá", "Usaquén", "Chapinero", "Santa fé", "La Candelaria",
