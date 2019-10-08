@@ -16,8 +16,8 @@ SESSION_CONFIGS = [
         'name': 'JugadorB',
         'display_name': "B",
         'num_demo_participants': 2,
-        'app_sequence': ['app_0_consent','appr_game','Joy_destruction_app','Demographics','app_9_report'],
-        'use_browser_bots': True
+        'app_sequence': ['app_0_consent','app_1_addition','appr_game','Joy_destruction_app','Demographics','app_9_report'],
+        'use_browser_bots': False
     },
 ]
 
