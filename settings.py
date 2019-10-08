@@ -17,8 +17,8 @@ SESSION_CONFIGS = [
         'display_name': "B",
         'num_demo_participants': 2,
         'app_sequence': ['app_0_consent','app_1_addition','appr_game','Joy_destruction_app','Demographics','app_9_report'],
-        'use_browser_bots': False´,
         'time_limit': 60*4,
+        'use_browser_bots': True,
     },
 ]
 
