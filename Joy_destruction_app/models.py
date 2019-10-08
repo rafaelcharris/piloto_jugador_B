@@ -14,7 +14,7 @@ class Constants(BaseConstants):
     name_in_url = 'Joy_destruction_app'
     players_per_group = 2
     num_rounds = 1
-    endowment = 0
+
     #constantes iniciales
     endowment = 10
     destruction_factor = 1/2
