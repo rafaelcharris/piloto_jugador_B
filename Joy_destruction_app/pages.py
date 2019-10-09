@@ -7,7 +7,8 @@ class instrucciones(Page):
     def vars_for_template(self):
         return dict(
             penalty = Constants.penalty,
-            endowment = Constants.endowment
+            endowment = Constants.endowment,
+            orden = self.session.config['orden_1']
         )
 
 class MyPage(Page):
