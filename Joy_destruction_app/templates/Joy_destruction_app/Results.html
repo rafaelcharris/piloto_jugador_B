@@ -13,10 +13,15 @@
 {% if player.destroy == 1 %}
     <p> Usted destruyó la mitad de la dotación del otro jugador</p>
 {% endif %}
-{% if player.destroyed == 1 %}
+
+{% elif player.destroyed == 1 %}
     <p>A usted le destruyeron la mitad de su dinero</p>
 {% endif %}
-
+{% comment %}
+        {% elif player.belief_is_correct == 1 %}
+            <p>Y usted tuvo razón acerca de la estrategia de la decisión del otro jugador</p>
+        {% endif %}
+{% endcomment %}
 <p>
     Su pago total es {{player.payoff}}
 </p>
