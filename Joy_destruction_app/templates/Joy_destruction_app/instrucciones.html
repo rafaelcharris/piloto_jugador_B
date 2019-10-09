@@ -2,20 +2,41 @@
 {% load otree static %}
 
 {% block title %}
-   Tercera Parte
+    {% if orden == True %}
+    Tercera Parte
+    {% else %}
+    Segunda Parte
+    {% endif %}
 {% endblock %}
 
 {% block content %}
+     {% if orden == True %}
 <p>
-    Esta es la tercera parte del estudio. Usted interactuará con otra persona.
+    Esta es la tercera parte del estudio.
+</p>
+     {% else %}
+<p>
+    Esta es la segunda parte del estudio.
+</p>
+{% endif %}
+<p>
+    Usted interactuará con otra persona.
     Ninguna persona sabrá la identidad de su contraparte.
     Sin embargo, es alguien entre todos los participantes que están en este momento en el salón.
     Quién será, el computador lo determinará más adelante a través de un sorteo.
     La cantidad de dinero que puede ganar en esta actividad dependerá de sus decisiones y de las decisiones de la persona con la que sea emparejado.
 </p>
-
+     {% if orden == True %}
 <p>
-Para esta segunda parte, usted y la persona con la que interactuará recibirán como dotación inicial {{endowment}} monedas experimentales cada uno.
+    Para esta tercera parte del estudio,
+
+     {% else %}
+<p>
+    Para esta segunda parte del estudio,
+
+{% endif %}
+
+ usted y la persona con la que interactuará recibirán como dotación inicial {{endowment}} monedas experimentales cada uno.
     Cada moneda experimental equivale a COP 1.000.
     Ustedes tienen que decidir si reducir la dotación inicial del otro o si dejarla tal como está.
     Reducir la dotación inicial del otro le va a costar a usted 1 moneda experimental.

@@ -13,14 +13,22 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'JugadorB',
-        'display_name': "B",
+        'name': 'Orden_1',
+        'display_name': "Orden_1",
         'num_demo_participants': 2,
-        'app_sequence': ['app_0_consent','app_1_addition','appr_game','Joy_destruction_app','Demographics','app_9_report'],
-        #'app_sequence': ['Joy_destruction_app'],
+        'app_sequence': ['app_0_consent','app_1_addition', 'appr_game', 'Joy_destruction_app','Demographics','app_9_report'],
         'time_limit': 60*4,
         'use_browser_bots': False,
         'orden_1': True,
+    },
+    {
+        'name': 'Orden_2',
+        'display_name': "Orden_2",
+        'num_demo_participants': 2,
+        'app_sequence': ['app_0_consent','app_1_addition','Joy_destruction_app', 'appr_game','Demographics','app_9_report'],
+        'time_limit': 60 * 4,
+        'use_browser_bots': False,
+        'orden_1': False,
     },
 ]
 
