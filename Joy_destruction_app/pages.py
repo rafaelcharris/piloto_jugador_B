@@ -19,6 +19,7 @@ class Results(Page):
     #Estos son espacios que el jugador puede llenar
     form_model = 'player'
     form_fields = ['destroy']
+    #todo poner feedback al final de todo .
 
     #Esta funcion trae al template
     def vars_for_template(self):
