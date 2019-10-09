@@ -49,11 +49,13 @@ class ResultsWaitPage(WaitPage):
         #Agregar el belief_is_correct a la base
         p1.belief_is_correct = p1_correct_belief
         p2.belief_is_correct = p2_correct_belief
-        
+
         #agregar si el jugador fue destruido a la base
         p1.destroyed = p2.destroy
         p2.destroyed = p1.destroy
-
+        
+        print("el jugador 1 fue destruido? " + str(p1.destroyed))
+        print("el jugador 2 fue destruido? " + str(p2.destroyed))
         #Mejor función de pago.
         #para no hacer ifs, es mejor usar multiplicación que sea cero si el jugador no tomó la decisión de destruir
         #y así mismo que se active la penalty si yo decidí destruir.
