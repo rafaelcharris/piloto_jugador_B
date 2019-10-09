@@ -46,4 +46,4 @@ class Player(BasePlayer):
     #agregar si el belief es correcto
     belief_is_correct = models.BooleanField()
 
-    destroyed = models.BooleanField()
+    destroyed = models.BooleanField(widget=widgets.HiddenInput())
