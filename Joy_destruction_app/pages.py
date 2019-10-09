@@ -17,7 +17,7 @@ class MyPage(Page):
 class Results(Page):
     #Estos son espacios que el jugador puede llenar
     form_model = 'player'
-    form_fields = ['destroy', 'destroyed']
+    form_fields = ['destroy']
 
     #Esta funcion trae al template
     def vars_for_template(self):
