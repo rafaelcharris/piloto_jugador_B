@@ -38,10 +38,12 @@ class Player(BasePlayer):
     belief = models.BooleanField(
         label = "Mi expectativa es:",
         choices = [ #Estas opciones hacen que los jugadores vean una string, pero que su respuesta se guarde como True o False
-            [True, "que la otra persona decidió dejar mi dotación inicial tal y como está"],
-        [False, "La otra persona decidió reducir mi dotación inicial"]
+            [True, " que la otra persona decidió reducir mi dotación inicial"],
+        [False, "que la otra persona decidió dejar mi dotación inicial tal y como está"]
         ]
     )
 
     #agregar si el belief es correcto
     belief_is_correct = models.BooleanField()
+
+    destroyed = models.BooleanField()

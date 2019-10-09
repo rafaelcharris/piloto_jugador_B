@@ -9,8 +9,8 @@ class PlayerBot(Bot):
             #dele click a la página de las instrucciones
         yield pages.instrucciones
             #Juegue jod: elija aleatoriamente un número entre 1 y 0
-        yield pages.MyPage, dict(destroy = bool(random.getrandbits(1)))
+        yield pages.MyPage, dict(destroy = True)
             #juege la página de creencias
-        yield pages.Belief, dict(belief = bool(random.getrandbits(1)))
+        yield pages.Belief, dict(belief = True)
             #juege la última página
         yield pages.Results
