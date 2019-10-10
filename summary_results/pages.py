@@ -9,8 +9,5 @@ class resumen(Page):
       self.player.report_summary()
 
 
-    def before_next_page(self):
-        self.vars_for_report()
-
 
 page_sequence = [resumen]
