@@ -58,14 +58,16 @@ class ResultsWaitPage(WaitPage):
         #El último término suma 1 punto más al pago si el belief es igual al pago del otro jugador.
         p1.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p2.destroy)) - \
                     (int(p1.destroy) * Constants.penalty) + p1_correct_belief
-        p1.participant.vars['jod_payoff'] = p1.payoff
+        p1.participant.vars['jod_payoff_points'] = p1.payoff
+        p1.participant.vars['jod_payoff_cop'] = c(p1.payoff).to_real_world_currency(self.session)
 
         p2.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p1.destroy)) - \
                     (int(p2.destroy) * Constants.penalty) + p2_correct_belief
-        p2.participant.vars['jod_payoff'] = p2.payoff
+        p2.participant.vars['jod_payoff_points'] = p2.payoff
+        p2.participant.vars['jod_payoff_cop'] = c(p2.payoff).to_real_world_currency(self.session)
 
-        print("el payoff del jugador 1 es " + str(p1.participant.vars['jod_payoff']))
-        print("el payoff del jugador 2 es " + str(p1.participant.vars['jod_payoff']))
+        print("el payoff del jugador 1 es " + str(p1.participant.vars['jod_payoff_cop']))
+        print("el payoff del jugador 2 es " + str(p1.participant.vars['jod_payoff_cop']))
 
 
 page_sequence = [

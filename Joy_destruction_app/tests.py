@@ -11,4 +11,4 @@ class PlayerBot(Bot):
             #Juegue jod: elija aleatoriamente un número entre 1 y 0
         yield pages.MyPage, dict(destroy = True)
             #juege la página de creencias
-        yield pages.Belief, dict(belief = False)
+        yield pages.Belief, dict(belief = True)

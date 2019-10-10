@@ -18,11 +18,11 @@
                 <td>{{ player.summary_addition_acc_was_correct }}</td>
             </tr>
             <tr>
-                <td>Cantidad de puntos ganados por sumas correctas</td>
+                <td>Cantidad de puntos experimentales ganados por sumas correctas</td>
                 <td>{{ player.summary_addition_acc_payoff }}</td>
             </tr>
             <tr>
-                <td>Cantidad final de puntos despues de ser afectado</td>
+                <td>Cantidad final de puntos experimentales después de ser afectado</td>
                 <td>{{ player.summary_addition_final_payoff }}</td>
             </tr>
         </tbody>
@@ -34,7 +34,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>Decidió apropiarse de las ganancias del otro jugador:</td>
+                <td>Decidió apropiarse de las ganancias de otro jugador de otra sesión:</td>
                 <td>{{ player.summary_appr }}</td>
             </tr>
              <tr>
@@ -46,28 +46,28 @@
                 <td>{{ player.summary_joy_was_destroyed }}</td>
             </tr>
             <tr>
-                <td>Usted tuvo razón acerca del comportamiento del otro jugador:</td>
+                <td>Sus expectativas acerca del comportamiento del otro jugador fueron correctas:</td>
                 <td>{{ player.summary_belief_was_correct }}</td>
             </tr>
             <tr>
-                <td>Sus ganancias en puntos fueron</td>
+                <td>Sus ganancias en monedas experimentales fueron</td>
                 <td>{{ player.summary_jod_payoff_points }}</td>
             </tr>
             <tr>
-                <td>Sus ganancias en COP fueron</td>
+                <td>Sus ganancias en COP fueron (se paga en la próxima sesión)</td>
                 <td>{{ player.summary_jod_payoff_cop }}</td>
             </tr>
         </tbody>
                 <thead>
             <tr>
-                <th scope="col">Ganancia total</th>
+                <th scope="col">Ganancia el día de hoy</th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Su ganancia total es:</td>
-                <td>{{ player.summary_FINAL_payoff}}</td>
+                <td>Su ganancia el día de hoy sin contar la segunda y tercera actividad es:</td>
+                <td>{{ player.summary_addition_final_payoff}}</td>
             </tr>
 
     </table>
