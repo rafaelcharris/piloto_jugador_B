@@ -10,10 +10,10 @@ from otree.api import (
 )
 
 
-author = 'Your name here'
+author = 'Rafael'
 
 doc = """
-Your app description
+Resumen de los pagos para el participante
 """
 
 
@@ -36,10 +36,12 @@ class Subsession(BaseSubsession):
             row['addition_acc_was_correct'] = p.participant.vars.get('addition_acc_was_correct')
             row['addition_acc_acc_payoff'] = p.participant.vars.get('addition_acc_acc_payoff')
             row['addition_final_payoff'] = p.participant.vars.get('addition_final_payoff')
-            row[''] = p.participant.vars.get('')
-            row[''] = p.participant.vars.get('')
-            row[''] = p.participant.vars.get('')
-            row[''] = p.participant.vars.get('')
+            row['appropriation_task'] = p.participant.vars.get('appr')
+            row['joy_destroy'] = p.participant.vars.get('destroy')
+            row['joy_was_destroyed'] = p.participant.vars.get('was_destroyed')
+            row['joy_belief'] = p.participant.vars.get('belief')
+            row['joy_belief_was_correct'] = p.participant.vars.get('belief_was_correct')
+            row['joy_payoff'] = p.participant.vars.get('jod_payoff')
             table_rows.append(row)
         return {'table_rows': table_rows}
 
