@@ -36,5 +36,5 @@ class Player(BasePlayer):
             [False, "No"]
         ]
     )
-    def report_appr(self):
-        self.participant.vars['appr'] == self.appr
+    def report_at(self):
+        self.participant.vars['appr'] = self.appr

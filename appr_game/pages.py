@@ -13,7 +13,7 @@ class Results(Page):
     form_model = 'player'
 
     def before_next_page(self):
-        self.player.report_appr()
+        self.player.report_at()
 
 page_sequence = [
     appropriation,
