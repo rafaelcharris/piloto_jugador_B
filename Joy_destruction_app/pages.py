@@ -18,6 +18,9 @@ class MyPage(Page):
 class Results(Page):
     form_model = 'player'
 
+    def before_next_page(self):
+        self.player.report_joy()
+
 class Belief(Page):
     form_model = 'player'
     form_fields = ['belief']
@@ -62,8 +65,6 @@ class ResultsWaitPage(WaitPage):
         print("el payoff del jugador 1 es " + str(p1.participant.vars['jod_payoff']))
         print("el payoff del jugador 2 es " + str(p1.participant.vars['jod_payoff']))
 
-    def before_next_page(self):
-        self.player.report_joy()
 
 page_sequence = [
     instrucciones,
