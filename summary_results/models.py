@@ -68,7 +68,7 @@ class Player(BasePlayer):
         if self.participant.vars['was_destroyed']:
             self.summary_joy_was_destroyed = 'Sí'
         else:
-            self.summary_joy_destroy = 'No'
+            self.summary_joy_was_destroyed = 'No'
 
         if self.participant.vars['belief']:
             self.summary_belief = 'Sí'
@@ -79,6 +79,7 @@ class Player(BasePlayer):
             self.summary_belief_was_correct = 'Sí'
         else:
             self.summary_belief_was_correct = 'No'
+
         self.summary_jod_payoff_points = self.participant.vars.get('jod_payoff_points')
         self.summary_jod_payoff_cop = self.participant.vars.get('jod_payoff_cop') #no se puede entrar al report antes de que temrinen esta parte. una sol es darle valor de algo al principio
 
