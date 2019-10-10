@@ -100,11 +100,11 @@ class Player(BasePlayer):
         label = '¿Ha sido objeto de violencia directa en los últimos doce meses?'
     )
     prob_atraco = preg_likert(
-        label = 'Cuál cree que es su probabilidad de ser víctima de un atraco en los próximos 12 meses?' 
+        label = 'Cuál cree que es su probabilidad de ser víctima de un atraco en los próximos 12 meses? ' 
                 'Por favor conteste usando la siguiente escala de uno a cinco, donde uno indica “no muy probable” y 5 indica “muy probable”.'
     )
     barrio_violento = preg_likert(
-        label = '¿Está de acuerdo con la afirmación “el barrio donde vivo es violento”?'
+        label = '¿Está de acuerdo con la afirmación “el barrio donde vivo es violento”? '
                 'Por favor, conteste usando la siguiente escala de uno a cinco, donde uno indica “estoy totalmente en desacuerdo” y 5 indica “estoy totalmente de acuerdo”.'
     )
     barrio_ayuda = models.BooleanField(
@@ -125,14 +125,15 @@ class Player(BasePlayer):
         widget= widgets.RadioSelectHorizontal
     )
     botella = models.StringField(
-        label = 'Imagine la siguiente situación: usted está de compras en una ciudad que no es familiar para usted y se da cuenta de que perdió el camino. Usted decide preguntarle a un extraño por indicaciones. El extraño ofrece llevarlo en su carro al destino que usted tenía. El viaje dura cerca de 20 minutos y le cuesta al extraño 20.000 pesos. El extraño no desea dinero por haberlo llevado. Usted lleva seis botellas de vino con usted. La botella más barata cuesta 5.000 pesos, la botella más cara cuesta 30.000 pesos. '
-                'Usted decide darle una de sus botellas al extraño como agradecimiento por el favor. ¿Cuál botella le daría?', #separar las preguntas para que sea más fácil de leer
+        label = 'Imagine la siguiente situación: usted está de compras en una ciudad que no es familiar para usted y se da cuenta de que perdió el camino. Usted decide preguntarle a un extraño por indicaciones. '
+                'El extraño ofrece llevarlo en su carro al destino que usted tenía. El viaje dura cerca de 20 minutos y le cuesta al extraño 20.000 pesos. El extraño no desea dinero por haberlo llevado. Usted lleva seis botellas de vino con usted. La botella más barata cuesta 5.000 pesos, la botella más cara cuesta 30.000 pesos. '
+                'Usted decide darle una de sus botellas al extraño como agradecimiento por el favor. ¿Cuál botella le daría? ', #separar las preguntas para que sea más fácil de leer
         choices = ['Botella de 5.000 pesos', 'Botella de 10.000 pesos', 'Botella de 15.000 pesos', 'Botella de 20.000 pesos',
                    'Botella de 25.000 pesos', 'Botella de 30.000 pesos'],
         widget=widgets.RadioSelect
     )
     self_perception_justicia = models.IntegerField(
-        label = '¿Cómo se ve a usted mismo? ¿Es una persona que generalmente está dispuesta a castigar comportamientos injustos, incluso, si esto es costoso para usted?'
+        label = '¿Cómo se ve a usted mismo? ¿Es una persona que generalmente está dispuesta a castigar comportamientos injustos, incluso, si esto es costoso para usted? '
                 'Por favor use una escala de 0 a 10, donde 0 significa que usted “no está dispuesto a incurrir en costos para castigar comportamientos injustos” y 10 significa que usted “está muy dispuesto a incurrir en costos para castigar comportamientos injustos”. '
                 'También puede usar los valores intermedios para indicar dónde se encuentra en la escala.',
         min = 1,
@@ -141,6 +142,6 @@ class Player(BasePlayer):
     )
 
     impuesto = preg_likert(
-        label = "¿Qué tan de acuerdo está con que el Gobierno tenga que reducir las diferencias entre ricos y pobres, de pronto subiendo los impuestos para los ricos o proveyendo asistencia a los ingresos de los más pobres?"
+        label = "¿Qué tan de acuerdo está con que el Gobierno tenga que reducir las diferencias entre ricos y pobres, de pronto subiendo los impuestos para los ricos o proveyendo asistencia a los ingresos de los más pobres? "
                 " Por favor, indique que tan de acuerdo está marcando un número de uno a cinco en la escala de abajo, donde uno indica “estoy totalmente en desacuerdo” y cinco indica “estoy totalmente de acuerdo”."
                                    )

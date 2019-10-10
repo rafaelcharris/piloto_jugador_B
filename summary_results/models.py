@@ -81,7 +81,7 @@ class Player(BasePlayer):
             self.summary_belief_was_correct = 'No'
 
         self.summary_jod_payoff_points = self.participant.vars.get('jod_payoff_points')
-        self.summary_jod_payoff_cop = self.participant.vars.get('jod_payoff_cop') #no se puede entrar al report antes de que temrinen esta parte. una sol es darle valor de algo al principio
+        self.summary_jod_payoff_cop = self.participant.vars.get('jod_payoff_cop')
 
         self.summary_FINAL_payoff = self.participant.vars.get('jod_payoff_cop') + self.participant.vars.get('addition_final_payoff')
         print('el pago final es: ' + str(self.summary_FINAL_payoff))
