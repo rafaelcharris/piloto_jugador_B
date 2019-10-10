@@ -59,7 +59,7 @@ class ResultsWaitPage(WaitPage):
         p1.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p2.destroy)) - \
                     (int(p1.destroy) * Constants.penalty) + p1_correct_belief
         p1.participant.vars['jod_payoff_points'] = p1.payoff
-        p1.participant.vars['jod_payoff_cop'] = c(p1.payoff*1000).to_real_world_currency(self.session)
+        p1.participant.vars['jod_payoff_cop'] = c(p1.payoff).to_real_world_currency(self.session)
 
         p2.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p1.destroy)) - \
                     (int(p2.destroy) * Constants.penalty) + p2_correct_belief
