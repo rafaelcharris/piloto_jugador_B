@@ -16,7 +16,7 @@ class Consent(Page):
 
 
 class NormalWaitPage(WaitPage):
-    pass
+    body_text = "Por favor espere a los otros participantes"
 
 
 page_sequence = [

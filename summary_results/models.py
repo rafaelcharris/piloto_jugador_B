@@ -47,9 +47,6 @@ class Player(BasePlayer):
     #Final
     summary_FINAL_payoff = models.CurrencyField()
 
-    #def vars_for_report(self):
-    #    self.participant.vars['payoff_final'] = self.participant.vars.get('jod_payoff_cop') + self.participant.vars.get('addition_final_payoff')
-
     def push_vars_to_summary(self):
         self.summary_addition_acc_was_correct = self.participant.vars.get('addition_acc_was_correct')
         self.summary_addition_acc_payoff = self.participant.vars.get('addition_acc_payoff')
