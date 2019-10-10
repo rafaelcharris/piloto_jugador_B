@@ -15,18 +15,12 @@ class MyPage(Page):
     form_model = 'player'
     form_fields = ['destroy']
 
-class Results(Page):
-    form_model = 'player'
-    def vars_for_template(self):
-        return dict(
-            orden = self.session.config['orden_1']
-        )
-    def before_next_page(self):
-        self.player.report_joy()
-
 class Belief(Page):
     form_model = 'player'
     form_fields = ['belief']
+
+    def before_next_page(self):
+        self.player.report_joy()
 
 class ResultsWaitPage(WaitPage):
     #Hacer calculos del payoff
@@ -73,7 +67,6 @@ page_sequence = [
     instrucciones,
     MyPage,
     Belief,
-    ResultsWaitPage,
-    Results
+    ResultsWaitPage
 ]
 
