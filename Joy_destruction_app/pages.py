@@ -17,13 +17,6 @@ class MyPage(Page):
 
 class Results(Page):
     form_model = 'player'
-    form_fields = ['destroy']
-
-    #Esta funcion trae al template
-    def vars_for_template(self):
-        return dict(
-            penalty=Constants.penalty
-            )
 
 class Belief(Page):
     form_model = 'player'
@@ -68,6 +61,7 @@ class ResultsWaitPage(WaitPage):
 
         print("el payoff del jugador 1 es " + str(p1.participant.vars['jod_payoff']))
         print("el payoff del jugador 2 es " + str(p1.participant.vars['jod_payoff']))
+
     def before_next_page(self):
         self.player.report_joy()
 
