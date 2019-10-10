@@ -1,0 +1,61 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    RESUMEN DE LA ACTIVIDAD DE HOY
+{% endblock %}
+   <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Resultado de la primera parte</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cantidad de sumas correctas</td>
+                <td>{{ player.summary_addition_acc_was_correct }}</td>
+            </tr>
+            <tr>
+                <td>Cantidad de puntos ganados por sumas correctas</td>
+                <td>{{ player.summary_addition_acc_payoff }}</td>
+            </tr>
+            <tr>
+                <td>Cantidad final de puntos despues de ser afectado</td>
+                <td>{{ player.summary_addition_final_payoff }}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th scope="col">Resultado de la segunda y tercera parte</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sus ganancias para las decisiones de la segunda parte fueron</td>
+                <td>{{ player.appr }}</td>
+            </tr>
+            <tr>
+                <td>Sus ganancias para las intenciones de la segunda parte fueron</td>
+                <td>{{ player.summary_trust_b_money_payoff }}</td>
+            </tr>
+        </tbody>
+                <thead>
+            <tr>
+                <th scope="col">Ganancia total</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Su ganancia total es:</td>
+                <td>{{ player.summary_FINAL_payoff }}</td>
+            </tr>
+
+    </table>
+{% block content %}
+
+    {% next_button %}
+
+{% endblock %}
