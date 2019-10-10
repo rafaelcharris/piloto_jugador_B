@@ -35,12 +35,12 @@ class Player(BasePlayer):
     summary_addition_acc_payoff = models.IntegerField()
     summary_addition_final_payoff = models.FloatField()
     #segunda parte:
-    summary_appr = models.BooleanField()
+    summary_appr = models.StringField()
     #tercera parte
-    summary_joy_destroy = models.BooleanField()
-    summary_joy_was_destroyed = models.BooleanField()
-    summary_belief = models.BooleanField()
-    summary_belief_was_correct = models.BooleanField()
+    summary_joy_destroy = models.StringField()
+    summary_joy_was_destroyed = models.StringField()
+    summary_belief = models.StringField()
+    summary_belief_was_correct = models.StringField()
     summary_jod_payoff_points = models.CurrencyField()
     summary_jod_payoff_cop = models.CurrencyField()
 
@@ -55,16 +55,36 @@ class Player(BasePlayer):
         self.summary_addition_acc_payoff = self.participant.vars.get('addition_acc_payoff')
         self.summary_addition_final_payoff = self.participant.vars.get('addition_final_payoff')
 
-        self.summary_appr = self.participant.vars.get('appr')
-        self.summary_joy_destroy = self.participant.vars.get('destroy')
-        self.summary_joy_was_destroyed = self.participant.vars.get('was_destroyed')
-        self.summary_belief = self.participant.vars.get('belief')
-        self.summary_belief_was_correct = self.participant.vars.get('belief_was_correct')
+        if self.participant.vars['appr']:
+            self.summary_appr = 'Sí'
+        else:
+            self.summary_appr = 'No'
+
+        if self.participant.vars['destroy']:
+            self.summary_joy_destroy = 'Sí'
+        else:
+            self.summary_joy_destroy = 'No'
+
+        if self.participant.vars['was_destroyed']:
+            self.summary_joy_was_destroyed = 'Sí'
+        else:
+            self.summary_joy_destroy = 'No'
+
+        if self.participant.vars['belief']:
+            self.summary_belief = 'Sí'
+        else:
+            self.summary_belief = 'No'
+
+        if self.participant.vars['belief_was_correct']:
+            self.summary_belief_was_correct = 'Sí'
+        else:
+            self.summary_belief_was_correct = 'No'
         self.summary_jod_payoff_points = self.participant.vars.get('jod_payoff_points')
         self.summary_jod_payoff_cop = self.participant.vars.get('jod_payoff_cop') #no se puede entrar al report antes de que temrinen esta parte. una sol es darle valor de algo al principio
 
         self.summary_FINAL_payoff = self.participant.vars.get('jod_payoff_cop') + self.participant.vars.get('addition_final_payoff')
         print('el pago final es: ' + str(self.summary_FINAL_payoff))
+
     def report_summary(self):
         self.participant.vars['FINAL_payoff'] = self.summary_FINAL_payoff
 
