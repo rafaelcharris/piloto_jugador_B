@@ -27,6 +27,7 @@
             <th>Joy<br>Belief</th>
             <th>Joy<br>Belief_was_correct</th>
             <th>Joy<br>Payoff</th>
+            <th>Final<br>Total_Payoff</th>
         </tr>
         {% for row in table_rows %}
         <tr>
@@ -43,6 +44,7 @@
             <td>{{ row.joy_belief}}</td>
             <td>{{ row.joy_belief_was_correct}}</td>
             <td>{{ row.joy_payoff}}</td>
+            <td>{{ row.payoff_final}}</td>
         </tr>
         {% endfor %}
     </table>

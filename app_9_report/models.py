@@ -46,6 +46,7 @@ class Subsession(BaseSubsession):
             row['joy_belief'] = p.participant.vars.get('belief')
             row['joy_belief_was_correct'] = p.participant.vars.get('belief_was_correct')
             row['joy_payoff'] = p.participant.vars.get('jod_payoff')
+            row['payoff_final'] = 1000*p.participant.vars.get('jod_payoff') + p.participant.vars.get('addition_final_payoff')
             table_rows.append(row)
         return {'table_rows': table_rows}
 
