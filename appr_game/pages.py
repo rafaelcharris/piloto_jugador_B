@@ -12,6 +12,9 @@ class Results(Page):
     form_fields = ['appr']
     form_model = 'player'
 
+    def before_next_page(self):
+        self.player.report_appr()
+
 page_sequence = [
     appropriation,
     Results
