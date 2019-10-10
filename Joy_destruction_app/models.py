@@ -31,8 +31,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     #Acá el usuario escribe si decide o no destruir
     destroy = models.BooleanField(
-        label = "¿Usted quiere pagar una moneda experimental para reducir la \
-        dotación inicial de la persona con la que fue emparejado?"
+        label = "Por favor piense cuidadosamente su decisión."
     )
 
     belief = models.BooleanField(

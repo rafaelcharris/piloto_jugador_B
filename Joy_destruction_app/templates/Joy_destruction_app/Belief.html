@@ -2,15 +2,19 @@
 {% load otree static %}
 
 {% block title %}
-Creencia
+    {% if orden == True %}
+    Tercera Parte
+    {% else %}
+    Segunda Parte
+    {% endif %}
 {% endblock %}
 
 {% block content %}
 <p>
-    Ahora le daremos la oportunidad de ganar unos pesos más.
-    Queremos que declare sus expectativas sobre el comportamiento de la persona con la cual ha sido emparejado.
-    Si su expectativa es correcta, usted ganará 1 moneda experimental extra.
-    </p>
+Ahora le daremos la oportunidad de ganar unos pesos más. Queremos que declare sus expectativas sobre el comportamiento
+    de la persona con la cual ha sido emparejado. Si su expectativa es correcta, usted ganará 1 moneda experimental
+    adicional.
+</p>
 {% formfield player.belief %}
 
     {% next_button %}

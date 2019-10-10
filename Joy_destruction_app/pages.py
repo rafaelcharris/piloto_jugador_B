@@ -14,13 +14,26 @@ class instrucciones(Page):
 class MyPage(Page):
     form_model = 'player'
     form_fields = ['destroy']
+    def vars_for_template(self):
+        return dict(
+            orden = self.session.config['orden_1']
+        )
+
+
+
 
 class Belief(Page):
     form_model = 'player'
     form_fields = ['belief']
 
+
     def before_next_page(self):
         self.player.report_joy()
+
+    def vars_for_template(self):
+        return dict(
+            orden = self.session.config['orden_1']
+        )
 
 
 class ResultsWaitPage(WaitPage):
