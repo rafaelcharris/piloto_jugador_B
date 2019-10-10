@@ -22,6 +22,7 @@ class Belief(Page):
     def before_next_page(self):
         self.player.report_joy()
 
+
 class ResultsWaitPage(WaitPage):
     #Hacer calculos del payoff
     def after_all_players_arrive(self):
@@ -39,13 +40,17 @@ class ResultsWaitPage(WaitPage):
         print("el jugador 1 destruyó  =  " + str(p1.destroy))
         print("el jugador 2 destruyó = " + str(p2.destroy))
 
-        #Agregar el belief_is_correct a la base
+        #Agregar el belief_is_correct a la base y a participants
         p1.belief_is_correct = p1_correct_belief
         p2.belief_is_correct = p2_correct_belief
+        p1.participant.vars['belief_was_correct'] = p1_correct_belief
+        p2.participant.vars['belief_was_correct'] = p2_correct_belief
 
-        #agregar si el jugador fue destruido a la base
+        #agregar si el jugador fue destruido a la base y a participants
         p1.was_destroyed = p2.destroy
         p2.was_destroyed = p1.destroy
+        p1.participant.vars['was_destroyed'] = p2.destroy
+        p2.participant.vars['was_destroyed'] = p1.destroy
 
         #Mejor función de pago.
         #para no hacer ifs, es mejor usar multiplicación que sea cero si el jugador no tomó la decisión de destruir
