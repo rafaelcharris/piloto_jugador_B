@@ -54,19 +54,20 @@ class ResultsWaitPage(WaitPage):
         p1.was_destroyed = p2.destroy
         p2.was_destroyed = p1.destroy
 
-        #print("el jugador 1 fue destruido? " + str(p1.destroyed))
-        #print("el jugador 2 fue destruido? " + str(p2.destroyed))
         #Mejor función de pago.
         #para no hacer ifs, es mejor usar multiplicación que sea cero si el jugador no tomó la decisión de destruir
         #y así mismo que se active la penalty si yo decidí destruir.
         #El último término suma 1 punto más al pago si el belief es igual al pago del otro jugador.
         p1.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p2.destroy)) - \
                     (int(p1.destroy) * Constants.penalty) + p1_correct_belief
-        print("El pago del jugador 1 es:" + str(p1.payoff))
+        p1.participant.vars['jod_payoff'] = p1.payoff
+
         p2.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p1.destroy)) - \
                     (int(p2.destroy) * Constants.penalty) + p2_correct_belief
-        print("El pago del jugador 2 es:" + str(p2.payoff))
+        p2.participant.vars['jod_payoff'] = p2.payoff
 
+        print("el payoff del jugador 1 es " + str(p1.participant.vars['jod_payoff']))
+        print("el payoff del jugador 2 es " + str(p1.participant.vars['jod_payoff']))
     def before_next_page(self):
         self.player.report_joy()
 
