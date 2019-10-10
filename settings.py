@@ -16,7 +16,7 @@ SESSION_CONFIGS = [
         'name': 'Orden_1',
         'display_name': "Orden_1",
         'num_demo_participants': 2,
-        'app_sequence': ['app_0_consent','app_1_addition', 'appr_game', 'Joy_destruction_app', 'summary_results', 'Demographics','app_9_report'],
+        'app_sequence': ['app_0_consent','app_1_addition', 'appr_game', 'Joy_destruction_app', 'summary_results', 'Demographics'],#,'app_9_report'],
         'time_limit': 60*4,
         'use_browser_bots': False,
         'orden_1': True,
