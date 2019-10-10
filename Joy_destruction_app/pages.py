@@ -17,7 +17,10 @@ class MyPage(Page):
 
 class Results(Page):
     form_model = 'player'
-
+    def vars_for_template(self):
+        return dict(
+            orden = self.session.config['orden_1']
+        )
     def before_next_page(self):
         self.player.report_joy()
 
