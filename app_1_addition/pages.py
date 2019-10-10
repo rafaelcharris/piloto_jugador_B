@@ -54,7 +54,7 @@ class app_1_addition_task(Page):
     def before_next_page(self):
 
         self.player.counting_future()
-
+    #todo set this p.participant.vars.get('jod_payoff') to 0
 
 class app_1_addition_announcement(Page):
 
