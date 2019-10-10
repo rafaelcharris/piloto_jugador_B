@@ -11,6 +11,9 @@ class appropriation(Page):
 class Results(Page):
     form_fields = ['appr']
     form_model = 'player'
+    
+    def vars_for_template(self):
+        return dict(orden = self.session.config['orden_1'])
 
     def before_next_page(self):
         self.player.report_at()

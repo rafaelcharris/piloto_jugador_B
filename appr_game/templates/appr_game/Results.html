@@ -6,9 +6,19 @@ Resultado
 {% endblock %}
 
 {% block content %}
+{% if player.appr == 1 %}
+    {% if orden = 1 %}
+        <p>Fin de la segunda parte</p>
+    {% else %}
+        <p>Fin de la tercera parte.</p>
 <p>Debido a que no sabemos la cantidad de puntos obtenidos por el otro participante, le pedimos que, por favor,
-    asista a una nueva sesión donde realizará una actividad diferente a la del día de hoy y donde le
-    pagaremos el resultado de esta segunda parte. </p>
+    asista a una nueva sesión en las próximas semanas en donde se realizará una actividad diferente a la del día de hoy y donde le
+    pagaremos el resultado de esta parte. </p>
+{% else %}
+    {% if orden = 1 %}
+        <p>Fin de la segunda parte parte.</p>
+    {% else %}
+        <p>Fin de la tercera parte. </p>
 {% formfield player.appr %}
     {% next_button %}
 
