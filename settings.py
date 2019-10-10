@@ -39,6 +39,7 @@ LANGUAGE_CODE = 'es-co'
 
 # e.g. EUR, GBP, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'COP'
+POINTS_CUSTOM_NAME = 'monedas experimentales'
 USE_POINTS = True
 
 ROOMS = [
