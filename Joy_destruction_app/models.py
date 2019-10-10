@@ -46,4 +46,10 @@ class Player(BasePlayer):
     #agregar si el belief es correcto
     belief_is_correct = models.BooleanField()
 
-    #destroyed = models.BooleanField(widget=widgets.HiddenInput()) #este widget sirve para ocultar en form.fields =
+    was_destroyed = models.BooleanField(widget=widgets.HiddenInput()) #este widget sirve para ocultar en form.fields =
+
+    def report_joy(self):
+        self.participant.vars['destroy'] = self.destroy
+        self.participant.vars['belief'] = self.belief
+        self.participant.vars['belief_was_correct'] = self.belief_is_correct
+        self.participant.vars['was_destroyed'] = self.was_destroyed

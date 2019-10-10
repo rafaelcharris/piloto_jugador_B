@@ -16,10 +16,8 @@ class MyPage(Page):
     form_fields = ['destroy']
 
 class Results(Page):
-    #Estos son espacios que el jugador puede llenar
     form_model = 'player'
     form_fields = ['destroy']
-    #todo poner feedback al final de todo .
 
     #Esta funcion trae al template
     def vars_for_template(self):
@@ -53,8 +51,8 @@ class ResultsWaitPage(WaitPage):
         p2.belief_is_correct = p2_correct_belief
 
         #agregar si el jugador fue destruido a la base
-        #p1.destroyed = p2.destroy
-        #p2.destroyed = p1.destroy
+        p1.was_destroyed = p2.destroy
+        p2.was_destroyed = p1.destroy
 
         #print("el jugador 1 fue destruido? " + str(p1.destroyed))
         #print("el jugador 2 fue destruido? " + str(p2.destroyed))
@@ -68,6 +66,9 @@ class ResultsWaitPage(WaitPage):
         p2.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p1.destroy)) - \
                     (int(p2.destroy) * Constants.penalty) + p2_correct_belief
         print("El pago del jugador 2 es:" + str(p2.payoff))
+
+    def before_next_page(self):
+        self.player.report_joy()
 
 page_sequence = [
     instrucciones,
