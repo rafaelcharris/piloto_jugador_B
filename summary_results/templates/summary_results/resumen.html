@@ -4,6 +4,7 @@
 {% block title %}
     RESUMEN DE LA ACTIVIDAD DE HOY
 {% endblock %}
+{% block content %}
    <table class="table table-bordered">
         <thead>
             <tr>
@@ -34,11 +35,19 @@
         <tbody>
             <tr>
                 <td>Decidió apropiarse de las ganancias del otro jugador:</td>
-                <td>{{ player.appr }}</td>
+                <td>{{ player.summary_appr }}</td>
+            </tr>
+             <tr>
+                <td>Decidió destruir las ganancias del otro jugador:</td>
+                <td>{{ player.summary_destroy }}</td>
+            </tr>
+             <tr>
+                <td>El otro jugador destruyó sus ganancias:</td>
+                <td>{{ player.summary_was_destroyed }}</td>
             </tr>
             <tr>
                 <td>Sus ganancias fueron</td>
-                <td>{{ player.payoff }}</td>
+                <td>{{ player.summary_joy_payoff }}</td>
             </tr>
         </tbody>
                 <thead>
@@ -50,11 +59,10 @@
         <tbody>
             <tr>
                 <td>Su ganancia total es:</td>
-                <td>{{ player.}}</td>
+                <td>{{ player.summary_FINAL_payoff}}</td>
             </tr>
 
     </table>
-{% block content %}
 
     {% next_button %}
 

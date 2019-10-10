@@ -24,31 +24,44 @@ class Constants(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-
-    def vars_for_admin_report(self):
-        table_rows = []
-        for p in self.get_players():
-            row = p.participant.vars #quejesto?
-            row['participant_code'] = p.participant.code
-            row['consent_name'] = p.participant.vars.get('consent_name')
-            row['consent_id_number'] = p.participant.vars.get('consent_id_number')
-            row['addition_treatment'] = p.participant.vars.get('treatment')
-            row['addition_acc_was_correct'] = p.participant.vars.get('addition_acc_was_correct')
-            row['addition_acc_acc_payoff'] = p.participant.vars.get('addition_acc_acc_payoff')
-            row['addition_final_payoff'] = p.participant.vars.get('addition_final_payoff')
-            row['appropriation_task'] = p.participant.vars.get('appr')
-            row['joy_destroy'] = p.participant.vars.get('destroy')
-            row['joy_was_destroyed'] = p.participant.vars.get('was_destroyed')
-            row['joy_belief'] = p.participant.vars.get('belief')
-            row['joy_belief_was_correct'] = p.participant.vars.get('belief_was_correct')
-            row['joy_payoff'] = p.participant.vars.get('jod_payoff')
-            table_rows.append(row)
-        return {'table_rows': table_rows}
-
+    pass
 
 class Group(BaseGroup):
     pass
 
-
 class Player(BasePlayer):
-    pass
+    #primera parte:
+    summary_addition_acc_was_correct = models.IntegerField()
+    summary_addition_acc_payoff = models.IntegerField()
+    summary_addition_final_payoff = models.FloatField()
+    #segunda parte:
+    summary_appr = models.BooleanField()
+    #tercera parte
+    summary_joy_destroy = models.BooleanField()
+    summary_joy_was_destroyed = models.BooleanField()
+    summary_belief = models.BooleanField()
+    summary_belief_was_correct = models.BooleanField()
+    summary_joy_payoff = models.FloatField()
+
+    #Final
+    summary_FINAL_payoff = models.FloatField()
+
+    def push_vars_to_summary(self):
+        self.summary_addition_acc_was_correct = self.participant.vars.get('addition_acc_was_correct')
+        self.summary_addition_acc_payoff = self.participant.vars.get('addition_acc_payoff')
+        self.summary_addition_final_payoff = self.participant.vars.get('addition_final_payoff')
+
+        self.summary_appr = self.participant.vars.get('appr')
+        self.summary_joy_destroy = self.participant.vars.get('destroy')
+        self.summary_joy_was_destroyed = self.participant.vars.get('was_destroyed')
+        self.summary_belief = self.participant.vars.get('belief')
+        self.summary_belief_was_correct = self.participant.vars.get('belief_was_correct')
+        self.summary_joy_payoff = self.participant.vars.get('jod_payoff')
+
+        self.summary_FINAL_payoff = self.participant.vars.get('addition_final_payoff') + self.participant.vars.get(
+            'joy_payoff') #Revisar el pago
+
+
+    def report_summary(self):
+        self.participant.vars['FINAL_payoff'] = self.summary_FINAL_payoff
+

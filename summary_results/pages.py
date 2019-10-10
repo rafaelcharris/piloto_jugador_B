@@ -4,16 +4,10 @@ from .models import Constants
 
 
 class resumen(Page):
-    pass
+    def vars_for_template(self):
+      self.player.push_vars_to_summary()
+      self.player.report_summary()
 
 
-class ResultsWaitPage(WaitPage):
-    def after_all_players_arrive(self):
-        pass
 
-
-class Results(Page):
-    pass
-
-
-page_sequence = [resumen, ResultsWaitPage, Results]
+page_sequence = [resumen]
