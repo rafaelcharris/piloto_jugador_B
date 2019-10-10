@@ -53,7 +53,7 @@ class Player(BasePlayer):
     def push_vars_to_summary(self):
         self.summary_addition_acc_was_correct = self.participant.vars.get('addition_acc_was_correct')
         self.summary_addition_acc_payoff = self.participant.vars.get('addition_acc_payoff')
-        self.summary_addition_final_payoff = self.participant.vars.get('addition_final_payoff')
+        self.summary_addition_final_payoff = int(self.participant.vars.get('addition_final_payoff'))
 
         if self.participant.vars['appr']:
             self.summary_appr = 'Sí'
