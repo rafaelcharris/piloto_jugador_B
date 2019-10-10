@@ -47,6 +47,9 @@ class Player(BasePlayer):
     #Final
     summary_FINAL_payoff = models.CurrencyField()
 
+    #def vars_for_report(self):
+    #    self.participant.vars['payoff_final'] = self.participant.vars.get('jod_payoff_cop') + self.participant.vars.get('addition_final_payoff')
+
     def push_vars_to_summary(self):
         self.summary_addition_acc_was_correct = self.participant.vars.get('addition_acc_was_correct')
         self.summary_addition_acc_payoff = self.participant.vars.get('addition_acc_payoff')
@@ -57,10 +60,10 @@ class Player(BasePlayer):
         self.summary_joy_was_destroyed = self.participant.vars.get('was_destroyed')
         self.summary_belief = self.participant.vars.get('belief')
         self.summary_belief_was_correct = self.participant.vars.get('belief_was_correct')
-        self.summary_jod_payoff_points = self.participant.vars.get('jod_payoff')
-        self.summary_jod_payoff_cop = 1000*self.participant.vars.get('jod_payoff') #no se puede entrar al report antes de que temrinen esta parte. una sol es darle valor de algo al principio
+        self.summary_jod_payoff_points = self.participant.vars.get('jod_payoff_points')
+        self.summary_jod_payoff_cop = self.participant.vars.get('jod_payoff_cop') #no se puede entrar al report antes de que temrinen esta parte. una sol es darle valor de algo al principio
 
-        self.summary_FINAL_payoff = self.participant.vars.get('addition_final_payoff') + 1000*self.participant.vars.get('jod_payoff') #Revisar el pago
+        self.summary_FINAL_payoff = self.participant.vars.get('jod_payoff_cop') + self.participant.vars.get('addition_final_payoff')
         print('el pago final es: ' + str(self.summary_FINAL_payoff))
     def report_summary(self):
         self.participant.vars['FINAL_payoff'] = self.summary_FINAL_payoff
