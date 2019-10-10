@@ -41,10 +41,10 @@ class Player(BasePlayer):
     summary_joy_was_destroyed = models.BooleanField()
     summary_belief = models.BooleanField()
     summary_belief_was_correct = models.BooleanField()
-    summary_joy_payoff = models.FloatField()
+    summary_joy_payoff = models.CurrencyField()
 
     #Final
-    summary_FINAL_payoff = models.FloatField()
+    summary_FINAL_payoff = models.CurrencyField()
 
     def push_vars_to_summary(self):
         self.summary_addition_acc_was_correct = self.participant.vars.get('addition_acc_was_correct')
