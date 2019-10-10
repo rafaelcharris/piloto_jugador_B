@@ -21,9 +21,12 @@
             <th>Add<br>is_correct</th>
             <th>Add<br>acc_payoff</th>
             <th>Add<br>final_payoff</th>
-            <th>Appr<br>appr</th>
-            <th>Joy<br>belief</th>
-            <th>Joy<br>payoff</th>
+            <th>Appr<br>appropiated</th>
+            <th>Joy<br>destroy</th>
+            <th>Joy<br>was_destroyed</th>
+            <th>Joy<br>joy_belief</th>
+            <th>Joy<br>belief_was_correct</th>
+            <th>Joy<br>joy_payoff</th>
         </tr>
         {% for row in table_rows %}
         <tr>
@@ -34,10 +37,12 @@
             <td>{{ row.addition_acc_was_correct }}</td>
             <td>{{ row.addition_acc_acc_payoff }}</td>
             <td>{{ row.addition_final_payoff }}</td>
-            <td>{{ row.appr }}</td>
-            <td>{{ row.destroy}}</td>
-            <td>{{ row.trust_t_final_payoff }}</td>
-            <td>{{ row. }}</td>
+            <td>{{ row.appropriation_task }}</td>
+            <td>{{ row.joy_destroy}}</td>
+            <td>{{ row.joy_was_destroyed}}</td>
+            <td>{{ row.joy_belief}}</td>
+            <td>{{ row.joy_belief_was_correct}}</td>
+            <td>{{ row.joy_payoff}}</td>
         </tr>
         {% endfor %}
     </table>
