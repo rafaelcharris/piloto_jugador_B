@@ -57,10 +57,9 @@ class Player(BasePlayer):
         self.summary_belief = self.participant.vars.get('belief')
         self.summary_belief_was_correct = self.participant.vars.get('belief_was_correct')
         self.summary_jod_payoff = self.participant.vars.get('jod_payoff')
-        print("payoff del jugador = " + str(self.participant.vars.get('jod_payoff')))
 
         self.summary_FINAL_payoff = self.participant.vars.get('addition_final_payoff') + 1000*self.participant.vars.get('jod_payoff') #Revisar el pago
-
+        print('el pago final es: ' + str(self.summary_FINAL_payoff))
     def report_summary(self):
         self.participant.vars['FINAL_payoff'] = self.summary_FINAL_payoff
 
