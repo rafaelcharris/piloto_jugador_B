@@ -49,7 +49,7 @@ class Subsession(BaseSubsession):
             row['payoff_final'] = p.participant.vars.get('FINAL_payoff')
             table_rows.append(row)
         return {'table_rows': table_rows}
-
+    #todo borrar pago final y poner en su lugar el pago de las sumas.
 
 class Group(BaseGroup):
     pass
