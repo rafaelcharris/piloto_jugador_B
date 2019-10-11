@@ -18,8 +18,8 @@
         </tr>
         <tr>
             <th>P_code</th>
-            <th>Consent Name</th>
             <th>ID Number</th>
+            <th>Consent Name</th>
             <th>Add<br>treatment</th>
             <th>Add<br>is_correct</th>
             <th>Add<br>acc_payoff</th>
@@ -30,13 +30,13 @@
             <th>Joy<br>Belief</th>
             <th>Joy<br>Belief_was_correct</th>
             <th>Joy<br>Payoff</th>
-            <th>Final<br>Total_Payoff</th>
+            <th>Pago<br>Final hoy</th>
         </tr>
         {% for row in table_rows %}
         <tr>
             <td>{{ row.participant_code }}</td>
-            <td>{{ row.consent_name }}</td>
             <td>{{ row.consent_id_number }}</td>
+            <td>{{ row.consent_name }}</td>
             <td>{{ row.addition_treatment }}</td>
             <td>{{ row.addition_acc_was_correct }}</td>
             <td>{{ row.addition_acc_payoff }}</td>
@@ -47,7 +47,7 @@
             <td>{{ row.joy_belief}}</td>
             <td>{{ row.joy_belief_was_correct}}</td>
             <td>{{ row.joy_payoff_points}}</td>
-            <td>{{ row.payoff_final}}</td>
+            <td>{{ row.addition_final_payoff}}</td>
         </tr>
         {% endfor %}
     </table>
