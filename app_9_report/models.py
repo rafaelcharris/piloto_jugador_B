@@ -39,7 +39,7 @@ class Subsession(BaseSubsession):
             row['addition_treatment'] = p.participant.vars.get('treatment')
             row['addition_acc_was_correct'] = p.participant.vars.get('addition_acc_was_correct')
             row['addition_acc_payoff'] = p.participant.vars.get('addition_acc_payoff')
-            row['addition_final_payoff'] = int(p.participant.vars.get('addition_final_payoff'))
+            row['addition_final_payoff'] = p.participant.vars.get('addition_final_payoff')
             row['appropriation_task'] = p.participant.vars.get('appr')
             row['joy_destroy'] = p.participant.vars.get('destroy')
             row['joy_was_destroyed'] = p.participant.vars.get('was_destroyed')
