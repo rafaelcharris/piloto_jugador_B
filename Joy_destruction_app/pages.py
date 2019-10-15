@@ -67,6 +67,7 @@ class ResultsWaitPage(WaitPage):
         p1.belief_shock_is_correct = p2.participant.vars['treatment'] == p1.belief_shock
         p1.participant.vars['belief_shock_is_correct'] = p1.belief_shock_is_correct
         print("valor de belief shock p1:" + str(p1.belief_shock_is_correct))
+
         p2.belief_shock_is_correct = p1.participant.vars['treatment'] == p2.belief_shock
         p2.participant.vars['belief_shock_is_correct'] = p2.belief_shock_is_correct
         print("valor de belief shock p2:" + str(p2.belief_shock_is_correct))
@@ -78,6 +79,7 @@ class ResultsWaitPage(WaitPage):
         p1.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p2.destroy)) - \
                     (int(p1.destroy) * Constants.penalty) + p1_correct_belief + \
                     p1.belief_shock_is_correct
+
         print("elementos:" + str(Constants.endowment*1 - Constants.destruction_factor * int(p2.destroy)) + '+' +
               str((int(p1.destroy) * Constants.penalty)) + '+' + str(p1_correct_belief) + '+' + str(p1.belief_shock_is_correct))
 
