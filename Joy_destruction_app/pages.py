@@ -80,7 +80,6 @@ class ResultsWaitPage(WaitPage):
         print("el payoff del jugador 1 es " + str(p1.participant.vars['jod_payoff_cop']))
         print("el payoff del jugador 2 es " + str(p1.participant.vars['jod_payoff_cop']))
 
-
         #Agregar el belief sobre el choque.
         p1.belief_shock_is_correct = p2.participant.vars['treatment'] == p1.belief_shock
         p2.belief_shock_is_correct = p1.participant.vars['treatment'] == p2.belief_shock
