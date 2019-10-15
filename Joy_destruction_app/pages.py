@@ -80,9 +80,6 @@ class ResultsWaitPage(WaitPage):
                     (int(p1.destroy) * Constants.penalty) + p1_correct_belief + \
                     p1.belief_shock_is_correct
 
-        print("elementos:" + str(Constants.endowment*1 - Constants.destruction_factor * int(p2.destroy)) + '+' +
-              str((int(p1.destroy) * Constants.penalty)) + '+' + str(p1_correct_belief) + '+' + str(p1.belief_shock_is_correct))
-
         p1.participant.vars['jod_payoff_points'] = p1.payoff
         p1.participant.vars['jod_payoff_cop'] = c(p1.payoff).to_real_world_currency(self.session)
 
