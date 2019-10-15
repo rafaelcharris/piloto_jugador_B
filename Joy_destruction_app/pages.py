@@ -85,6 +85,8 @@ class ResultsWaitPage(WaitPage):
         p1.belief_shock_is_correct = p2.participant.vars['treatment'] == p1.belief_shock
         p2.belief_shock_is_correct = p1.participant.vars['treatment'] == p2.belief_shock
 
+        print("el p1 tuvo el siguiente elief de choque: " + str(p1.belief_is_correct))
+        #todo Agregar esta info a la función de pago
 page_sequence = [
     instrucciones,
     MyPage,
