@@ -63,28 +63,31 @@ class ResultsWaitPage(WaitPage):
         p1.participant.vars['was_destroyed'] = p2.destroy
         p2.participant.vars['was_destroyed'] = p1.destroy
 
-        #Mejor función de pago.
+        #Agregar el belief sobre el choque.
+        p1.belief_shock_is_correct = p2.participant.vars['treatment'] == p1.belief_shock
+        p1.participant.vars['belief_shock_is_correct'] = p1.belief_shock_is_correct
+
+        p2.belief_shock_is_correct = p1.participant.vars['treatment'] == p2.belief_shock
+        p2.participant.vars['belief_shock_is_correct'] = p2.belief_shock_is_correct
+
+        #Función de pago
         #para no hacer ifs, es mejor usar multiplicación que sea cero si el jugador no tomó la decisión de destruir
         #y así mismo que se active la penalty si yo decidí destruir.
         #El último término suma 1 punto más al pago si el belief es igual al pago del otro jugador.
+
         p1.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p2.destroy)) - \
-                    (int(p1.destroy) * Constants.penalty) + p1_correct_belief
+                    (int(p1.destroy) * Constants.penalty) + 1/2*p1_correct_belief + 1/2*p1.belief_shock_is_correct
         p1.participant.vars['jod_payoff_points'] = p1.payoff
         p1.participant.vars['jod_payoff_cop'] = c(p1.payoff).to_real_world_currency(self.session)
 
         p2.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p1.destroy)) - \
-                    (int(p2.destroy) * Constants.penalty) + p2_correct_belief
+                    (int(p2.destroy) * Constants.penalty) + 1/2*p2_correct_belief + 1/2*p1.belief_shock_is_correct
         p2.participant.vars['jod_payoff_points'] = p2.payoff
         p2.participant.vars['jod_payoff_cop'] = c(p2.payoff).to_real_world_currency(self.session)
 
         print("el payoff del jugador 1 es " + str(p1.participant.vars['jod_payoff_cop']))
         print("el payoff del jugador 2 es " + str(p1.participant.vars['jod_payoff_cop']))
 
-        #Agregar el belief sobre el choque.
-        p1.belief_shock_is_correct = p2.participant.vars['treatment'] == p1.belief_shock
-        p1.participant.vars['belief_shock_is_correct'] = p1.belief_shock_is_correct
-        p2.belief_shock_is_correct = p1.participant.vars['treatment'] == p2.belief_shock
-        p2.participant.vars['belief_shock_is_correct'] = p2.belief_shock_is_correct
 
         print("el p1 tuvo el siguiente elief de choque: " + str(p1.belief_is_correct))
         #todo Agregar esta info a la función de pago
