@@ -49,7 +49,7 @@ class Subsession(BaseSubsession):
             #row['payoff_final'] = p.participant.vars.get('addition_final_payoff')
             table_rows.append(row)
         return {'table_rows': table_rows}
-#todo agregar highliting a la linea en la que esté el mouse https://www.computerhope.com/issues/ch001662.htm
+
 class Group(BaseGroup):
     pass
 

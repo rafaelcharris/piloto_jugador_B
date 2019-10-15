@@ -12,10 +12,12 @@
 {% block content %}
 <p>
 Ahora le daremos la oportunidad de ganar unos pesos más. Queremos que declare sus expectativas sobre el comportamiento
-    de la persona con la cual ha sido emparejado. Si su expectativa es correcta, usted ganará 1 moneda experimental
+    de la persona con la cual ha sido emparejado. Por cada respuesta correcta, usted ganará 1 moneda experimental
     adicional.
 </p>
 {% formfield player.belief %}
+
+{% formfield playaer.belief_shock %}
 
     {% next_button %}
 {% endblock %}

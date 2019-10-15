@@ -20,11 +20,9 @@ class MyPage(Page):
         )
 
 
-
-
 class Belief(Page):
     form_model = 'player'
-    form_fields = ['belief']
+    form_fields = ['belief', 'belief_shock']
 
 
     def before_next_page(self):
@@ -81,6 +79,10 @@ class ResultsWaitPage(WaitPage):
 
         print("el payoff del jugador 1 es " + str(p1.participant.vars['jod_payoff_cop']))
         print("el payoff del jugador 2 es " + str(p1.participant.vars['jod_payoff_cop']))
+
+
+
+        #Agregar el belief sobre el choque.
 
 
 page_sequence = [

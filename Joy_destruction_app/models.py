@@ -50,3 +50,11 @@ class Player(BasePlayer):
     def report_joy(self):
         self.participant.vars['destroy'] = self.destroy
         self.participant.vars['belief'] = self.belief
+
+    belief_shock = models.BooleanField( label = '¿Cuál de los dos eventos posibles que se podían enfrentar en la primera parte de la actividad cree usted que el\
+        participante con el que interactuó realmente enfrentó?',
+        choices=[
+            (True, 'Creo que sus ganancias acumuladas no se vieron afectadas de ninguna manera'),
+            (False, 'Creo que el 80% de sus ganancias acumuladas fueron destruidas')
+        ]
+    )
