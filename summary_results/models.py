@@ -34,6 +34,8 @@ class Player(BasePlayer):
     summary_addition_acc_was_correct = models.IntegerField()
     summary_addition_acc_payoff = models.IntegerField()
     summary_addition_final_payoff = models.FloatField()
+    summary_addition_belief_shock_is_correct = models.StringField()
+
     #segunda parte:
     summary_appr = models.StringField()
     #tercera parte
@@ -51,6 +53,11 @@ class Player(BasePlayer):
         self.summary_addition_acc_was_correct = self.participant.vars.get('addition_acc_was_correct')
         self.summary_addition_acc_payoff = self.participant.vars.get('addition_acc_payoff')
         self.summary_addition_final_payoff = int(self.participant.vars.get('addition_final_payoff'))
+
+        if self.participant.vars['belief_shock_is_correct']:
+            self.summary_addition_belief_shock_is_correct = 'Sí'
+        else:
+            self.summary_addition_belief_shock_is_correct = 'No'
 
         if self.participant.vars['appr']:
             self.summary_appr = 'Sí'
@@ -77,6 +84,8 @@ class Player(BasePlayer):
         else:
             self.summary_belief_was_correct = 'No'
 
+        if self.participant.vars['belief_shock_']:
+            self.summary_
         self.summary_jod_payoff_points = self.participant.vars.get('jod_payoff_points')
         self.summary_jod_payoff_cop = self.participant.vars.get('jod_payoff_cop')
 

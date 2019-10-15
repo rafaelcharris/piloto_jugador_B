@@ -25,6 +25,11 @@
                 <td>Cantidad final de puntos experimentales después de ser afectado</td>
                 <td>{{ player.summary_addition_final_payoff }}</td>
             </tr>
+            <tr>
+                <td>Creencia si el otro fue afectado o no</td>
+                <td>{{ player.summary_addition_final_payoff }}</td>
+            </tr>
+
         </tbody>
         <thead>
             <tr>
@@ -46,10 +51,9 @@
                 <td>{{ player.summary_joy_was_destroyed }}</td>
             </tr>
             <tr>
-                <td>Sus expectativas acerca del comportamiento del otro jugador en {% if orden == True %}la segunda parte {% else %} tercera parte {% endif %} fueron correctas:</td>
+                <td>Sus expectativas acerca del comportamiento del otro jugador en la {% if orden == True %} tercera {% else %} segunda {% endif %} parte fueron correctas:</td>
                 <td>{{ player.summary_belief_was_correct }}</td>
             </tr>
-
             <tr>
                 <td>Sus ganancias en monedas experimentales fueron</td>
                 <td>{{ player.summary_jod_payoff_points }}</td>
