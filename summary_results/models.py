@@ -84,8 +84,6 @@ class Player(BasePlayer):
         else:
             self.summary_belief_was_correct = 'No'
 
-        if self.participant.vars['belief_shock_']:
-            self.summary_
         self.summary_jod_payoff_points = self.participant.vars.get('jod_payoff_points')
         self.summary_jod_payoff_cop = self.participant.vars.get('jod_payoff_cop')
 
