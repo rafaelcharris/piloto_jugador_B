@@ -38,18 +38,18 @@ class Subsession(BaseSubsession):
             row['consent_id_number'] = p.participant.vars.get('consent_id_number')
             row['addition_treatment'] = p.participant.vars.get('treatment')
             row['addition_acc_was_correct'] = p.participant.vars.get('addition_acc_was_correct')
-            row['addition_acc_acc_payoff'] = p.participant.vars.get('addition_acc_acc_payoff')
+            row['addition_acc_payoff'] = p.participant.vars.get('addition_acc_payoff')
             row['addition_final_payoff'] = p.participant.vars.get('addition_final_payoff')
+            row['addition_shock_belief'] = p.participant.vars.get('belief_shock_is_correct')
             row['appropriation_task'] = p.participant.vars.get('appr')
             row['joy_destroy'] = p.participant.vars.get('destroy')
             row['joy_was_destroyed'] = p.participant.vars.get('was_destroyed')
             row['joy_belief'] = p.participant.vars.get('belief')
             row['joy_belief_was_correct'] = p.participant.vars.get('belief_was_correct')
             row['joy_payoff_points'] = p.participant.vars.get('jod_payoff_points')
-            row['payoff_final'] = p.participant.vars.get('FINAL_payoff')
+            row['payoff_final'] = p.participant.vars.get('jod_payoff_cop')
             table_rows.append(row)
         return {'table_rows': table_rows}
-
 
 class Group(BaseGroup):
     pass
@@ -58,22 +58,3 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     e_mail = djmodels.EmailField(verbose_name='Correo Electrónico', validators=[UnalEmailValidator()])
-
-#    def report_vars_for_database(self):
-#        self.report_participant_code = self.participant.code
-#        vars_fields = [
-#            'participant_code',
-#            'consent_name',
-#            'consent_id_number',
-#            'addition_acc_was_correct',
-#            'addition_acc_acc_payoff',
-#            'addition_final_payoff',
-#            'trust_metarole',
-#            'trust_paying_round',
-#            'trust_t_final_payoff',
-#            'trust_b_final_payoff',
-#        ]
-#
-#        for field in vars_fields:
-#            setattr(self, 'report_{}'.format(field), self.participant.vars.get(field))
-#

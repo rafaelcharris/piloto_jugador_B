@@ -25,6 +25,11 @@
                 <td>Cantidad final de puntos experimentales después de ser afectado</td>
                 <td>{{ player.summary_addition_final_payoff }}</td>
             </tr>
+            <tr>
+                <td>Su creencia acerca de cómo fue afectado el otro jugador fue correcta: </td>
+                <td>{{ player.summary_addition_belief_shock_is_correct }}</td>
+            </tr>
+
         </tbody>
         <thead>
             <tr>
@@ -46,7 +51,7 @@
                 <td>{{ player.summary_joy_was_destroyed }}</td>
             </tr>
             <tr>
-                <td>Sus expectativas acerca del comportamiento del otro jugador fueron correctas:</td>
+                <td>Sus expectativas acerca del comportamiento del otro jugador en la {% if orden == True %} tercera {% else %} segunda {% endif %} parte fueron correctas:</td>
                 <td>{{ player.summary_belief_was_correct }}</td>
             </tr>
             <tr>
