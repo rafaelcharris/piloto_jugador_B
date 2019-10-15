@@ -81,16 +81,16 @@ class ResultsWaitPage(WaitPage):
         p1.participant.vars['jod_payoff_cop'] = c(p1.payoff).to_real_world_currency(self.session)
 
         p2.payoff = Constants.endowment * (1 - Constants.destruction_factor * int(p1.destroy)) - \
-                    (int(p2.destroy) * Constants.penalty) + 1/2*p2_correct_belief + 1/2*p1.belief_shock_is_correct
+                    (int(p2.destroy) * Constants.penalty) + 1/2*p2_correct_belief + 1/2*p2.belief_shock_is_correct
+
         p2.participant.vars['jod_payoff_points'] = p2.payoff
         p2.participant.vars['jod_payoff_cop'] = c(p2.payoff).to_real_world_currency(self.session)
 
         print("el payoff del jugador 1 es " + str(p1.participant.vars['jod_payoff_cop']))
-        print("el payoff del jugador 2 es " + str(p1.participant.vars['jod_payoff_cop']))
+        print("el payoff del jugador 2 es " + str(p2.participant.vars['jod_payoff_cop']))
 
 
         print("el p1 tuvo el siguiente elief de choque: " + str(p1.belief_is_correct))
-        #todo Agregar esta info a la función de pago
 page_sequence = [
     instrucciones,
     MyPage,
