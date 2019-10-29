@@ -29,7 +29,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     appr = models.BooleanField(
-        label = "¿Desea apropiarse del 80% de las ganancias de otro participante del estudio de otra sesión?",
+        label = "¿Desea robar el 80% de las ganancias de otro participante del estudio de otra sesión?",
         initial=True,
         choices=[
             [True, "Sí"], #Esto hace que pueda usar el boolean, pero cambio las opciones que ve el jugador
