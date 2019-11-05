@@ -152,5 +152,5 @@ class Player(BasePlayer):
     )
 
     belief_robo = models.StringField(
-        label = "¿Cuánto cree que va a ganar con el robo?"
+        label = "¿Cuánto cree que va a ganar con el robo? (escriba un valor en pesos)"
     )
