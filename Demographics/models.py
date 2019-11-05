@@ -148,9 +148,10 @@ class Player(BasePlayer):
 
     text  = models.LongStringField(
         label = "En la tarea en la que usted tenía que decidir si robar o no el 80% de las ganancias de otro participante, de otra sesión,"
-                "independientemente de si usted decidió robar o no ¿qué cree que le pasa al pago del otro participante, si no lo roban?"
+                "independientemente de si usted decidió robar o no ¿qué cree que le pasa al pago del otro participante si no lo roban?"
     )
 
     belief_robo = models.LongStringField(
-        label = "Si usted decidió robar ¿Cuánto dinero cree que va a ganar con el robo? (escriba un valor en pesos)"
+        label = "Si usted decidió robar en la tarea descrita en la pregunta anterior ¿Cuánto dinero cree que va a ganar con el robo? (escriba un valor en pesos) "
+                "Si usted no decidió robar escriba \"NA\" "
     )
