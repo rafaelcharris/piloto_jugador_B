@@ -147,7 +147,8 @@ class Player(BasePlayer):
                                    )
 
     text  = models.LongStringField(
-        label = "Si eligió la opción de robar ¿qué cree que hubiera pasado si no lo hubiera hecho?"
+        label = "Si eligió la opción de robar ¿qué cree que hubiera pasado si no lo hubiera hecho? "
+                "Si no la eligió, escriba \"No\""
     )
 
     belief_robo = models.StringField(
